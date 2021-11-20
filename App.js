@@ -1,23 +1,27 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import Pagina from './src/inicio/pagina';
-import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import Login from './src/autenticacao/user';
+//import das paginas 
+import PaginaPrincipal from './src/inicio/pagina';
+import EscolhasMU from '../airsoft/src/mural/escoMU'
+import EscolhasCA from '../airsoft/src/cadastros/escoCA';
+import LoginUser from './src/autenticacao/login';
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      {/* <Pagina/> */}
-      <Login/>
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+
+        <Stack.Screen name = "Logar" component = {LoginUser} />
+        <Stack.Screen name = "Pagina" component = {PaginaPrincipal} />
+        <Stack.Screen name = "EscolherMU" component = {EscolhasMU} />
+        <Stack.Screen name = "EscolherCA" component = {EscolhasCA} />
+
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  
-  container: {
-    flex: 1,             
-  },
-  
-});
