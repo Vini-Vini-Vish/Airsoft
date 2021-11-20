@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
 
   container: {
     flex: 1,           
-    color: 'black',
+    //color: 'black',
     borderRadius: 0,        
     marginLeft: 5, 
     marginTop: 10,
