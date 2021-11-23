@@ -47,6 +47,38 @@ const styles = StyleSheet.create({
       fontWeight: 'bold',
     },
 
+    textCad: {
+      marginLeft: '5%',
+      marginTop: '5%',
+      textAlign: 'left',
+      paddingBottom: '2%',
+      color: '#000000', 
+      fontWeight: 'bold',
+    },
+
+    boxCad: {
+      backgroundColor: '#dcdcdc',
+      paddingBottom: '5%',      
+    },
+
+    boxContainerCad: {      
+      marginRight: '2%',
+      marginLeft: '2%',
+    },
+
+    textButaoCad: {
+      padding: 5,
+      backgroundColor: '#0000cd',  
+      textAlign: 'center',   
+      lineHeight: 26,
+      fontWeight: 'bold',
+      fontSize: 16,   
+      color: 'white',       
+      borderWidth: 1,        
+      borderBottomEndRadius: 10, 
+      borderBottomLeftRadius: 10,     
+    },
+
     textSubTitleLogin: {      
         padding: 10,         
         backgroundColor: '#afeeee',           
@@ -57,6 +89,8 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         marginRight: 20,
         marginLeft: 20,
+        borderTopRightRadius: 10,
+        borderTopLeftRadius: 10,
     },
 
     boxTextComun: {
@@ -80,6 +114,7 @@ const styles = StyleSheet.create({
         marginLeft: 20,
         borderWidth: 1,
         padding: 10,
+        backgroundColor: 'white',
     },
 
     textButao: {
@@ -92,7 +127,9 @@ const styles = StyleSheet.create({
         color: 'white',  
         marginRight: 20,
         marginLeft: 20,  
-        borderWidth: 1,
+        borderWidth: 1,        
+        borderBottomEndRadius: 10, 
+        borderBottomLeftRadius: 10,     
     },  
 
     textButaoComun: {
@@ -105,7 +142,7 @@ const styles = StyleSheet.create({
         color: 'white',  
         marginRight: 20,
         marginLeft: 20,  
-        borderWidth: 1,
+        borderWidth: 1,        
     },
 
     textComunmLogin: {   
@@ -114,7 +151,8 @@ const styles = StyleSheet.create({
         paddingBottom: 5,  
         paddingLeft: 10,
         paddingRight: 10,
-        textAlign: 'justify',    
+        textAlign: 'justify',  
+       
     }, 
   
     textCorpo: {
