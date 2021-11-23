@@ -13,31 +13,31 @@ export default function ItensCad ({navigation }) {
                <View style = {styles.boxContainerCad}>
                
                     <View style = {styles.boxCad}>
-                        <Text style = {styles.textCad}>Email e Senha Cadastrados</Text>
+                        <Text style = {styles.textCad}>Insira o Nome do Item Desejado</Text>
                         <TextInput 
                             style = {styles.textInput}
-                            placeholder = 'nome@gmail.com'
+                            placeholder = 'Fuzil de Assalto M4A1'
                             //value={text} tem que criar a variavel
                         ></TextInput> 
 
-                        <Text style = {styles.textCad}>Nome Completo</Text>
+                        <Text style = {styles.textCad}>Descrição do Item</Text>
                         <TextInput 
                             style = {styles.textInput}
-                            placeholder = 'Eder Lopes de Souza'
+                            placeholder = 'Material de ferro, com peças anexadas de outras armas.....'
                             //value={text} tem que criar a variavel
                         ></TextInput> 
 
-                        <Text style = {styles.textCad}>CPF</Text>
+                        <Text style = {styles.textCad}>Ano de Compra</Text>
                         <TextInput 
                             style = {styles.textInput}
-                            placeholder = '78456859268'
+                            placeholder = '2015'
                             //value={text} tem que criar a variavel
                         ></TextInput> 
 
-                        <Text style = {styles.textCad}>Numero de Telefone</Text>
+                        <Text style = {styles.textCad}>Foi adquirido: Novo/Semi Novo/Usado</Text>
                         <TextInput 
                             style = {styles.textInput}
-                            placeholder = '(17) 987541412'
+                            placeholder = 'Usado, comprado com 2 anos de uso'
                             //value={text} tem que criar a variavel
                         ></TextInput> 
 
@@ -60,7 +60,7 @@ export default function ItensCad ({navigation }) {
                     <View style = {styles.textButaoCad}>
                         <Button                         
                             title = 'Salvar Dados Inseridos'
-                            onPress = {() => navigation.navigate('Logar')}
+                            onPress = {() => navigation.navigate('')}
                         ></Button>  
                     </View>                        
                 </View>     
