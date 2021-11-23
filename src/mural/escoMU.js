@@ -35,7 +35,7 @@ export default function EscolhasMU ({navigation }) {
                     <Text style = {styles.textComunm}>A se adicionar: alugar terrenos que possam ser construidas estruturas temporarias para jogos, por tempos defenidos (dias, meses, anos).</Text>
                     <View style = {styles.textButaoComun}> 
                       <Button 
-                        title = 'Locar Campo Custom'
+                        title = 'Locar Campo Custom (EM BREVE)'
                         //onPress = {() => navigation.navigate('')}
                       ></Button>
                     </View>
