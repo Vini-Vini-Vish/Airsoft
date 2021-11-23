@@ -53,7 +53,7 @@ export default function LocalCad ({navigation }) {
                     <View style = {styles.textButaoCad}>
                         <Button                         
                             title = 'Salvar Dados Inseridos'
-                            onPress = {() => navigation.navigate('Logar')}
+                            onPress = {() => navigation.navigate('Pagina')}
                         ></Button>  
                     </View>                        
                 </View>     
