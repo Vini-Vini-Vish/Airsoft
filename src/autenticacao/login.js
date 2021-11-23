@@ -11,13 +11,14 @@ export default function LoginUser ({navigation }) {
             <Text style = {styles.boxTitleBase}>REALIZE O LOGIN</Text>
 
             <View style = {styles.textCorpo}>
-
+            
               <Text style = {styles.textSubTitleLogin}>Email e Senha Cadastrados</Text>
               <TextInput 
                 style = {styles.textInput}
                 placeholder = 'nome@gmail.com'
                 //value={text} tem que criar a variavel
-              ></TextInput>                    
+              ></TextInput>   
+
               <TextInput 
                 style = {styles.textInput}
                 placeholder = '15afaf475'
@@ -29,14 +30,14 @@ export default function LoginUser ({navigation }) {
                   title = 'Logar'
                   onPress = {() => navigation.navigate('Pagina')}
                 ></Button>
-              </View>                   
+              </View>                               
 
               <View style = {styles.textCorpo}>
                 <Text style = {styles.textSubTitleLogin}>Cadastro de novo Usuario</Text>
                 <View style = {styles.textButao}>
                   <Button                         
                   title = 'Cadastro de Usuario'
-                  //onPress = {() => navigation.navigate('')}
+                  onPress = {() => navigation.navigate('CadastrarIT')}
                   ></Button>  
                 </View>    
               </View>                                                   
