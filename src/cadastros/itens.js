@@ -41,17 +41,17 @@ export default function ItensCad ({navigation }) {
                             //value={text} tem que criar a variavel
                         ></TextInput> 
 
-                        <Text style = {styles.textCad}>Senha</Text>
+                        <Text style = {styles.textCad}>Importado ou Compra Nacional</Text>
                         <TextInput 
                             style = {styles.textInput}
-                            placeholder = '15457695'
+                            placeholder = 'Nacional'
                             //value={text} tem que criar a variavel
                         ></TextInput> 
 
-                        <Text style = {styles.textCad}>Confirmar Senha</Text>
+                        <Text style = {styles.textCad}>Condições do Item e reparos feitos</Text>
                         <TextInput 
                             style = {styles.textInput}
-                            placeholder = '15457695'
+                            placeholder = 'Boas Condições de uso,Foi trocado o gatilho....'
                             //value={text} tem que criar a variavel
                         ></TextInput> 
 
@@ -60,7 +60,7 @@ export default function ItensCad ({navigation }) {
                     <View style = {styles.textButaoCad}>
                         <Button                         
                             title = 'Salvar Dados Inseridos'
-                            onPress = {() => navigation.navigate('')}
+                            onPress = {() => navigation.navigate('Pagina')}
                         ></Button>  
                     </View>                        
                 </View>     
