@@ -47,7 +47,7 @@ export default function PaginaPrincipal ({navigation }) {
               <View style = {styles.textButaoComun}> 
                 <Button 
                   title = 'Perfil'
-                  onPress = {() => navigation.navigate('')}
+                  onPress = {() => navigation.navigate('alterarUser')}
                 ></Button>
               </View>
             </View>
