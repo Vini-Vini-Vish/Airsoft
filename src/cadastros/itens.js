@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, Button, TextInput, } from 'react-native';
+import { Text, View, Button, TextInput, CheckBox, } from 'react-native';
 import styles from '../../style';
 
 export default function ItensCad ({navigation }) {
@@ -13,6 +13,21 @@ export default function ItensCad ({navigation }) {
                <View style = {styles.boxContainerCad}>
                
                     <View style = {styles.boxCad}>
+                        
+                        <View style={styles.checkboxContainer}>
+                            <CheckBox
+                                //value={isSelected}
+                                //onValueChange={setSelection}                                
+                            />
+                            <Text style={styles.label}>Armas e Munição</Text>
+
+                            <CheckBox
+                                //value={isSelected}
+                                //onValueChange={setSelection}                                
+                            />
+                            <Text style={styles.label}>Itens de Proteção</Text>
+                        </View>                        
+                                        
                         <Text style = {styles.textCad}>Insira o Nome do Item Desejado</Text>
                         <TextInput 
                             style = {styles.textInput}
