@@ -7,6 +7,8 @@ import PaginaPrincipal from './src/inicio/pagina';
 import EscolhasMU from '../airsoft/src/mural/escoMU'
 import EscolhasCA from '../airsoft/src/cadastros/escoCA';
 import LoginUser from './src/autenticacao/login';
+import ItensCad from '../airsoft/src/cadastros/itens'
+import LocalCad from '../airsoft/src/cadastros/local'
 
 const Stack = createNativeStackNavigator();
 
@@ -19,6 +21,8 @@ export default function App() {
         <Stack.Screen name = "Pagina" component = {PaginaPrincipal} />
         <Stack.Screen name = "EscolherMU" component = {EscolhasMU} />
         <Stack.Screen name = "EscolherCA" component = {EscolhasCA} />
+        <Stack.Screen name = "CadastrarIT" component = {ItensCad} />
+        <Stack.Screen name = "CadastrarLo" component = {LocalCad} />
 
       </Stack.Navigator>
     </NavigationContainer>
