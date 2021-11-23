@@ -37,7 +37,7 @@ export default function LoginUser ({navigation }) {
                 <View style = {styles.textButao}>
                   <Button                         
                   title = 'Cadastro de Usuario'
-                  onPress = {() => navigation.navigate('CadastrarIT')}
+                  onPress = {() => navigation.navigate('CadastrarUser')}
                   ></Button>  
                 </View>    
               </View>                                                   
