@@ -31,6 +31,17 @@ const styles = StyleSheet.create({
         fontSize: 16,   
         color: 'white'      
     }, 
+
+    checkboxContainer: {
+      flexDirection: "row",
+      marginTop: '5%',
+      alignSelf: "center",   
+      alignItems: 'center',     
+    },
+    
+    label: {
+      margin: 8,
+    },
   
     textTitle: {    
       textAlign: 'center',   
