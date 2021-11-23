@@ -16,7 +16,7 @@ export default function EscolhasCA ({navigation }) {
                     <View style = {styles.textButaoComun}> 
                       <Button  
                           title = 'Cadastro de Itens'
-                          //onPress = {() => navigation.navigate('')}
+                          onPress = {() => navigation.navigate('CadastrarIT')}
                       ></Button>
                     </View>
                   </View>
@@ -26,7 +26,7 @@ export default function EscolhasCA ({navigation }) {
                     <View style = {styles.textButaoComun}> 
                       <Button 
                           title = 'Cadastro de local'
-                          //onPress = {() => navigation.navigate('')}
+                          onPress = {() => navigation.navigate('CadastrarLo')}
                       ></Button>  
                     </View>               
                   </View>
