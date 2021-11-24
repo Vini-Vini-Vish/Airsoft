@@ -13,7 +13,7 @@ export default function perfilAlt ({navigation }) {
                <View style = {styles.boxContainerCad}>
                
                     <View style = {styles.boxCad}>
-                        <Text style = {styles.textCad}>Email e Senha Cadastrados</Text>
+                        <Text style = {styles.textCad}>Email</Text>
                         <TextInput 
                             style = {styles.textInput}
                             placeholder = 'nome@gmail.com'
