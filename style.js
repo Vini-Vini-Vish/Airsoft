@@ -9,22 +9,22 @@ const styles = StyleSheet.create({
   
     container: {
       flex: 1,           
-      borderRadius: 0,        
-      marginLeft: 5, 
-      marginTop: 10,
-      marginRight: 5,
-      marginBottom: 10,  
+      borderRadius: '0%',        
+      marginLeft: '2%', 
+      marginTop: '3%',
+      marginRight: '2%',
+      marginBottom: '3%',  
       backgroundColor: '#F0F8FF',     
     },
     
     boxTitle: {
-      padding: 30,
-      backgroundColor: '#1e90ff',       
+      padding: '6%',
+      backgroundColor: '#b22222',       
     },
 
     boxTitleBase: {
         padding: 30,
-        backgroundColor: '#1e90ff',  
+        backgroundColor: '#b22222',  
         textAlign: 'center',   
         lineHeight: 26,
         fontWeight: 'bold',
@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
 
     checkboxContainer: {
       flexDirection: "row",
-      marginTop: '5%',
+      marginTop: '1%',
       alignSelf: "center",   
       alignItems: 'center',     
     },
@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
     },
   
     textSubTitle: {      
-      paddingTop: 40,    
+      paddingTop: '9%',    
       fontSize: 14,
       textAlign: 'center',
       fontWeight: 'bold',
@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
 
     textCad: {
       marginLeft: '5%',
-      marginTop: '5%',
+      marginTop: '3%',
       textAlign: 'left',
       paddingBottom: '2%',
       color: '#000000', 
@@ -75,11 +75,12 @@ const styles = StyleSheet.create({
     boxContainerCad: {      
       marginRight: '2%',
       marginLeft: '2%',
+      margingBottom: 0,
     },
 
     textButaoCad: {
-      padding: 5,
-      backgroundColor: '#0000cd',  
+      padding: '1%',
+      backgroundColor: 'black',  
       textAlign: 'center',   
       lineHeight: 26,
       fontWeight: 'bold',
@@ -104,17 +105,21 @@ const styles = StyleSheet.create({
         borderTopLeftRadius: 10,
     },
 
-    boxTextComun: {
-        borderTopWidth: 2,
-        marginBottom: 15,         
+    boxTextComun: {        
+        borderWidth: 2,
+        borderRadius: 15,
+        backgroundColor: '#f0f8ff',        
+        paddingBottom: '3%',
+        marginBottom: '5%',   
+        marginRight: '3%',  
+        marginLeft: '3%',    
     },
   
     textComunm: {   
       fontSize: 14,
-      paddingTop: 15,  
-      paddingBottom: 5,  
-      paddingLeft: 10,
-      paddingRight: 10,
+      paddingTop: '4%',  
+      paddingBottom: '2%',   
+      paddingLeft: '6%',      
       fontWeight: 'bold',
       textAlign: 'justify',    
     }, 
@@ -145,7 +150,7 @@ const styles = StyleSheet.create({
 
     textButaoComun: {
         padding: 5,
-        backgroundColor: '#fffafa',  
+        backgroundColor: '#8b008b',  //borda dos botões
         textAlign: 'center',   
         lineHeight: 26,
         fontWeight: 'bold',
@@ -167,8 +172,8 @@ const styles = StyleSheet.create({
     }, 
   
     textCorpo: {
-      paddingTop: 30,
-      paddingBottom: 30,
+      paddingTop: '7%',
+      paddingBottom: '7%',
     }
   
   });
