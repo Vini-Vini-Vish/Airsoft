@@ -70,6 +70,13 @@ export default function ItensCad ({navigation }) {
                             //value={text} tem que criar a variavel
                         ></TextInput> 
 
+                        <Text style = {styles.textCad}>Preço</Text>
+                        <TextInput 
+                            style = {styles.textInput}
+                            placeholder = 'Valor a ser anunciado.'
+                            //value={text} tem que criar a variavel
+                        ></TextInput> 
+
                     </View>
                                 
                     <View style = {styles.textButaoCad}>
