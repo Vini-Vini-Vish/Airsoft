@@ -48,6 +48,13 @@ export default function LocalCad ({navigation }) {
                             //value={text} tem que criar a variavel
                         ></TextInput> 
 
+                        <Text style = {styles.textCad}>Valor da Diaria</Text>
+                        <TextInput 
+                            style = {styles.textInput}
+                            placeholder = '500 reais a diaria'
+                            //value={text} tem que criar a variavel
+                        ></TextInput> 
+
                     </View>
                                 
                     <View style = {styles.textButaoCad}>
