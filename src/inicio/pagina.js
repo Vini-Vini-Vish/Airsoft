@@ -23,7 +23,7 @@ export default function PaginaPrincipal ({navigation }) {
           <View style = {styles.textCorpo}>
 
             <View style = {styles.boxTextComun}>
-              <Text style = {styles.textComunm}>O botão de Cadastros, contem as opções: Equipamentos, Campos, Usuario</Text>
+              <Text style = {styles.textComunm}>Cadastros:</Text>
               <View style = {styles.textButaoComun}>               
                 <Button  
                   title = 'Cadastros'
@@ -33,7 +33,7 @@ export default function PaginaPrincipal ({navigation }) {
             </View>            
 
             <View style = {styles.boxTextComun}>
-              <Text style = {styles.textComunm}>O botão de Mural, contem as opções: Armas e Munição, Equipamentos de Proteção, Campos.</Text>          
+              <Text style = {styles.textComunm}>Mural de Publicações:</Text>          
               <View style = {styles.textButaoComun}> 
                 <Button 
                   title = 'Mural'
@@ -43,7 +43,7 @@ export default function PaginaPrincipal ({navigation }) {
             </View>
 
             <View style = {styles.boxTextComun}>
-              <Text style = {styles.textComunm}>O botão de Perfil, redireciona para a vizualização dos dados cadastrados.</Text>
+              <Text style = {styles.textComunm}>Alterar Dados de Perfil:</Text>
               <View style = {styles.textButaoComun}> 
                 <Button 
                   title = 'Perfil'
