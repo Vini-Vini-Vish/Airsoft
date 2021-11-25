@@ -34,6 +34,7 @@ export default function LoginUser ({navigation }) {
 
               <View style = {styles.textCorpo}>
                 <Text style = {styles.textSubTitleLogin}>Cadastro de novo Usuario</Text>
+
                 <View style = {styles.textButao}>
                   <Button                         
                   title = 'Cadastro de Usuario'
