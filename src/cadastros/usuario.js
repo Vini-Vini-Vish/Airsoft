@@ -1,8 +1,18 @@
-import React from 'react';
-import { Text, View, Button, TextInput, } from 'react-native';
+import React, { useState } from 'react';
+import { Text, View, Button, TextInput, TouchableOpacity,} from 'react-native';
 import styles from '../../style';
 
+
+
 export default function userCad ({navigation }) {
+
+    const [emailCad, setemailCad] = useState(null)
+    const [nomeCad, setnomeCad] = useState(null)
+    const [cpf, setCPF] = useState(null)
+    const [tell, setTell] = useState(null)
+    const [senha, setSenha] = useState(null)
+    const [confirmSenha, setconfirmSenha] = useState(null)
+    
     return (
        <View style = {styles.boxFora}> 
 
@@ -17,51 +27,59 @@ export default function userCad ({navigation }) {
                         <TextInput 
                             style = {styles.textInput}
                             placeholder = 'nome@gmail.com'
-                            //value={text} tem que criar a variavel
+                            onChangeText = {setemailCad}
+                            value = {emailCad} 
                         ></TextInput> 
 
                         <Text style = {styles.textCad}>Nome Completo</Text>
                         <TextInput 
                             style = {styles.textInput}
                             placeholder = 'Eder Lopes de Souza'
-                            //value={text} tem que criar a variavel
+                            onChangeText = {setnomeCad}
+                            value = {nomeCad} 
                         ></TextInput> 
 
                         <Text style = {styles.textCad}>CPF</Text>
                         <TextInput 
                             style = {styles.textInput}
                             placeholder = '78456859268'
-                            //value={text} tem que criar a variavel
+                            onChangeText = {setCPF}
+                            value = {cpf} 
                         ></TextInput> 
 
                         <Text style = {styles.textCad}>Numero de Telefone</Text>
                         <TextInput 
                             style = {styles.textInput}
                             placeholder = '(17) 987541412'
-                            //value={text} tem que criar a variavel
+                            onChangeText = {setTell}
+                            value = {tell}
                         ></TextInput> 
 
                         <Text style = {styles.textCad}>Senha</Text>
                         <TextInput 
                             style = {styles.textInput}
                             placeholder = '15457695'
-                            //value={text} tem que criar a variavel
+                            onChangeText = {setSenha}
+                            value = {senha} 
                         ></TextInput> 
 
                         <Text style = {styles.textCad}>Confirmar Senha</Text>
                         <TextInput 
                             style = {styles.textInput}
                             placeholder = '15457695'
-                            //value={text} tem que criar a variavel
+                            onChangeText = {setconfirmSenha}
+                            value = {confirmSenha} 
                         ></TextInput> 
 
                     </View>
                                 
-                    <View style = {styles.textButaoCad}>
-                        <Button                         
-                            title = 'Salvar Dados Inseridos'
+                    <View >
+                        <TouchableOpacity
+                            style = {styles.butaoBack}
                             onPress = {() => navigation.navigate('Logar')}
-                        ></Button>  
+                        >
+                            <Text style = {styles.textButaoCad} >Salvar Dados Inseridos</Text>
+                        </TouchableOpacity>                        
                     </View>                        
                 </View>     
            </View>
