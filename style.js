@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
     },
   
     container: {
-      flex: 1,           
+      //flex: 1,           
       borderRadius: '0%',        
       marginLeft: '2%', 
       marginTop: '3%',
@@ -78,17 +78,22 @@ const styles = StyleSheet.create({
       margingBottom: 0,
     },
 
-    textButaoCad: {
+    butaoBack: {
       padding: '1%',
-      backgroundColor: 'black',  
-      textAlign: 'center',   
-      lineHeight: 26,
-      fontWeight: 'bold',
-      fontSize: 16,   
-      color: 'white',       
+      backgroundColor: '#0000', 
+      color: '#0000',
       borderWidth: 1,        
       borderBottomEndRadius: 10, 
       borderBottomLeftRadius: 10,     
+    },
+
+    textButaoCad: {
+      fontSize: 16,   
+      color: 'white',
+      textAlign: 'center',   
+      lineHeight: 26,
+      fontWeight: 'bold',
+      backgroundColor: 'green',
     },
 
     textSubTitleLogin: {      
@@ -167,8 +172,7 @@ const styles = StyleSheet.create({
         paddingBottom: 5,  
         paddingLeft: 10,
         paddingRight: 10,
-        textAlign: 'justify',  
-       
+        textAlign: 'justify',         
     }, 
   
     textCorpo: {
