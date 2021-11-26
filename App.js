@@ -19,7 +19,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-
+        
         <Stack.Screen name = "Logar" component = {LoginUser} />
         <Stack.Screen name = "Pagina" component = {PaginaPrincipal} />
         <Stack.Screen name = "EscolherMU" component = {EscolhasMU} />
