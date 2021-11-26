@@ -6,7 +6,12 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.urlencoded({extended : false}));
 
-let port = process.env.PORT || 3000;
-app.listen(port,(req,res) => {
-    console.log('Servidor on');
+app.get('/',(req,res) => {
+    res.send('Servidor back-end funcionando');
 });
+
+let port = process.env.PORT || 3000;
+app.listen(port,(req,res)=>{
+    console.log('Servidor ON');
+})
+
