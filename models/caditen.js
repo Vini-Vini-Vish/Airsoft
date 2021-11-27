@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      CadIten.belongsTo(models.CadUsu)
+      CadIten.belongsTo(models.CadUsuario)
     }
   };
   CadIten.init({
@@ -20,7 +20,8 @@ module.exports = (sequelize, DataTypes) => {
     desAquiIt: DataTypes.STRING,
     desNacIt: DataTypes.STRING,
     condIt: DataTypes.STRING,
-    precoIt: DataTypes.FLOAT
+    precoIt: DataTypes.FLOAT,
+    cadUserId: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'CadIten',

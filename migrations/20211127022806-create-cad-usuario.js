@@ -1,30 +1,30 @@
 'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('CadLocs', {
+    await queryInterface.createTable('CadUsuarios', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      nomeLoc: {
+      emailUser: {
         type: Sequelize.STRING
       },
-      desLoc: {
+      nomeUser: {
         type: Sequelize.STRING
       },
-      cidLoc: {
-        type: Sequelize.STRING
-      },
-      endLoc: {
-        type: Sequelize.STRING
-      },
-      numTelLoc: {
+      cpfUser: {
         type: Sequelize.INTEGER
       },
-      valAluLoc: {
-        type: Sequelize.FLOAT
+      numTelUser: {
+        type: Sequelize.INTEGER
+      },
+      senhaUser: {
+        type: Sequelize.STRING
+      },
+      confSenhaUser: {
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,
@@ -37,6 +37,6 @@ module.exports = {
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('CadLocs');
+    await queryInterface.dropTable('CadUsuarios');
   }
 };
