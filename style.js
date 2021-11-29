@@ -70,12 +70,14 @@ const styles = StyleSheet.create({
     boxCad: {
       backgroundColor: '#dcdcdc',
       paddingBottom: '5%',      
+      paddingTop: '2%',
+      marginTop: '5%',    
     },
 
     boxContainerCad: {      
       marginRight: '2%',
       marginLeft: '2%',
-      margingBottom: 0,
+      paddingBottom: '3%',
     },
 
     butaoBack: {
@@ -182,7 +184,7 @@ const styles = StyleSheet.create({
 
     selectBox: {
       height: 35, 
-      width: '100%', 
+      width: '97%', 
       alignSelf: 'center' 
     }
   
