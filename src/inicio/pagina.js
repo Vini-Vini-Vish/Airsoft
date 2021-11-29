@@ -14,16 +14,14 @@ export default function PaginaPrincipal ({navigation }) {
 
           </View>           
 
-          <View>
-
-            <Text style = {styles.textSubTitle}>ESCOLHA A OPÇÃO DESEJADA:</Text>
-          
-          </View>
+         {/*  <View>
+            <Text style = {styles.textSubTitle}>ESCOLHA A OPÇÃO DESEJADA:</Text>          
+          </View> */}
 
           <View style = {styles.textCorpo}>
 
             <View style = {styles.boxTextComun}>
-              <Text style = {styles.textComunm}>Cadastros:</Text>
+              {/* <Text style = {styles.textComunm}>Cadastros:</Text> */}
               <View style = {styles.textButaoComun}>               
                 <Button  
                   title = 'Cadastros'
@@ -33,20 +31,20 @@ export default function PaginaPrincipal ({navigation }) {
             </View>            
 
             <View style = {styles.boxTextComun}>
-              <Text style = {styles.textComunm}>Mural de Publicações:</Text>          
+              {/* <Text style = {styles.textComunm}>Mural de Publicações:</Text>           */}
               <View style = {styles.textButaoComun}> 
                 <Button 
-                  title = 'Mural'
+                  title = 'Mural de Publicações'
                   onPress = {() => navigation.navigate('EscolherMU')}
                 ></Button>
               </View>
             </View>
 
             <View style = {styles.boxTextComun}>
-              <Text style = {styles.textComunm}>Alterar Dados de Perfil:</Text>
+              {/* <Text style = {styles.textComunm}>Alterar Dados de Perfil:</Text> */}
               <View style = {styles.textButaoComun}> 
                 <Button 
-                  title = 'Perfil'
+                  title = 'Alterar Dados de Perfil'
                   onPress = {() => navigation.navigate('alterarUser')}
                 ></Button>
               </View>

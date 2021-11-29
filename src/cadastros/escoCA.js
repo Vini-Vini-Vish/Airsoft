@@ -12,7 +12,7 @@ export default function EscolhasCA ({navigation }) {
 
                 <View style = {styles.textCorpo}>
                   <View style = {styles.boxTextComun}>
-                    <Text style = {styles.textComunm}>Cadastro de Itens:</Text>
+                    {/* <Text style = {styles.textComunm}>Cadastro de Itens:</Text> */}
                     <View style = {styles.textButaoComun}> 
                       <Button  
                           title = 'Cadastro de Itens'
@@ -22,10 +22,10 @@ export default function EscolhasCA ({navigation }) {
                   </View>
 
                   <View style = {styles.boxTextComun}>
-                    <Text style = {styles.textComunm}>Cadastro de Locais:</Text>
+                    {/* <Text style = {styles.textComunm}>Cadastro de Locais:</Text> */}
                     <View style = {styles.textButaoComun}> 
                       <Button 
-                          title = 'Cadastro de local'
+                          title = 'Cadastro de Locais'
                           onPress = {() => navigation.navigate('CadastrarLo')}
                       ></Button>  
                     </View>               

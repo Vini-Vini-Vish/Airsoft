@@ -113,13 +113,14 @@ const styles = StyleSheet.create({
     },
 
     boxTextComun: {        
-        borderWidth: 2,
-        borderRadius: 15,
+        //borderWidth: 2,
+        //borderRadius: 15,
         backgroundColor: '#f0f8ff',        
-        paddingBottom: '3%',
-        marginBottom: '5%',   
-        marginRight: '3%',  
-        marginLeft: '3%',    
+        //paddingBottom: '3%',
+        //marginBottom: '5%', 
+        margin: '3%',  
+        //marginRight: '3%',  
+        //marginLeft: '3%',    
     },
   
     textComunm: {   
@@ -178,8 +179,18 @@ const styles = StyleSheet.create({
     }, 
   
     textCorpo: {
+      paddingTop: '2%',
+      paddingBottom: '2%',
+      borderWidth: 2,
+      borderRadius: 30,
+      //marginRight: '3%',
+      //marginLeft: '3%',
+      margin: '5%',
+    },
+
+    textCorpoLogin: {
       paddingTop: '7%',
-      paddingBottom: '7%',
+      paddingBottom: '7%',      
     },
 
     selectBox: {

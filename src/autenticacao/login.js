@@ -10,7 +10,7 @@ export default function LoginUser ({navigation }) {
 
             <Text style = {styles.boxTitleBase}>REALIZE O LOGIN</Text>
 
-            <View style = {styles.textCorpo}>
+            <View style = {styles.textCorpoLogin}>
             
               <Text style = {styles.textSubTitleLogin}>Email e Senha Cadastrados</Text>
               <TextInput 
@@ -32,7 +32,7 @@ export default function LoginUser ({navigation }) {
                 ></Button>
               </View>                               
 
-              <View style = {styles.textCorpo}>
+              <View style = {styles.textCorpoLogin}>
                 <Text style = {styles.textSubTitleLogin}>Cadastro de novo Usuario</Text>
 
                 <View style = {styles.textButao}>
