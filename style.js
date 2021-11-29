@@ -178,6 +178,12 @@ const styles = StyleSheet.create({
     textCorpo: {
       paddingTop: '7%',
       paddingBottom: '7%',
+    },
+
+    selectBox: {
+      height: 35, 
+      width: '100%', 
+      alignSelf: 'center' 
     }
   
   });

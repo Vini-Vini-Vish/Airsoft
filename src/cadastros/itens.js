@@ -1,8 +1,11 @@
 import React from 'react';
-import { Text, View, Button, TextInput, CheckBox, } from 'react-native';
+import { Text, View, Button, TextInput, CheckBox, Picker } from 'react-native';
 import styles from '../../style';
 
 export default function ItensCad ({navigation }) {
+
+    //const [selectedValue, setSelectedValue] = useState("Armas e Munição");
+
     return (
        <View style = {styles.boxFora}> 
 
@@ -13,8 +16,20 @@ export default function ItensCad ({navigation }) {
                <View style = {styles.boxContainerCad}>
                
                     <View style = {styles.boxCad}>
+
+                        <View >
+                            <Picker
+                                //selectedValue={selectedValue}
+                                style = {styles.selectBox}                                
+                                //onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
+                            >
+                                <Picker.Item label="Armas e Munição" value="ARMU" />
+                                <Picker.Item label="Itens de Proteção" value="IRPR" />
+                            </Picker>
+
+                        </View>
                         
-                        <View style={styles.checkboxContainer}>
+                        {/* <View style={styles.checkboxContainer}>
                             <CheckBox
                                 //value={isSelected}
                                 //onValueChange={setSelection}                                
@@ -26,7 +41,7 @@ export default function ItensCad ({navigation }) {
                                 //onValueChange={setSelection}                                
                             />
                             <Text style={styles.label}>Itens de Proteção</Text>
-                        </View>                        
+                        </View>  */}                       
                                         
                         <Text style = {styles.textCad}>Insira o Nome do Item Desejado</Text>
                         <TextInput 
