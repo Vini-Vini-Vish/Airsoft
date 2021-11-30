@@ -49,6 +49,24 @@ app.get('/consultaSe',async(req,res)=>{
 
 //Fim Consulta
 
+//Chamada Alteração
+
+app.get('/alterar',async(req,res)=>{
+    let alterar = await usuario.update({
+        emailUser: "teste_teste@gmail.com",
+        nomeUser: "Usuario Teste",
+        cpfUser: "123456789",
+        numTelUser: "1898157465",
+        senhaUser: "789456123",
+        confSenhaUser: "789456123"
+    }, 
+        { where: { id: 1 }
+    });
+    res.send(alterar);
+});
+
+//Fim Alteração
+
 app.get('/',(req,res) => {
     res.send('Servidor back-end funcionando');
 })
