@@ -3,7 +3,7 @@ import {StyleSheet, } from 'react-native';
 const styles = StyleSheet.create({
   
     boxFora: {
-      flex: 1,  
+      flex: 1,      
       backgroundColor: '#000000', 
     },
   
