@@ -11,6 +11,8 @@ let usuario = models.CadUsuario;
 let Loc = models.CadLoc;
 let Iten = models.CadIten;
 
+//Chamada para Inserir dados
+
 app.get('/inserir',async(req,res)=>{
     let inserir = await usuario.create({
         emailUser: "usuario_teste@gmail.com",
@@ -24,6 +26,28 @@ app.get('/inserir',async(req,res)=>{
     });
     res.send('Usuario inserido com sucesso!');
 })
+
+// Chamadas de Consulta
+
+//geral
+app.get('/consulta',async(req,res)=>{
+    let consulta = await usuario.findAll();
+    res.send(consulta);
+});
+
+//usando atributos
+app.get('/consultaAt',async(req,res)=>{
+    let consulta = await usuario.findAll({attributes: ['emailUser', 'nomeUser', 'cpfUser', 'numTelUser', 'senhaUser', 'confSenhaUser']});
+    res.send(consulta);
+});
+
+//usando ID
+app.get('/consultaSe',async(req,res)=>{
+    let consulta = await usuario.findAll( {where: {id: 2} });
+    res.send(consulta);
+});
+
+//Fim Consulta
 
 app.get('/',(req,res) => {
     res.send('Servidor back-end funcionando');
