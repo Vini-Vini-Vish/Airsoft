@@ -1,19 +1,17 @@
 import React, { useState } from 'react';
-import { Text, View, Button, TextInput, TouchableOpacity,} from 'react-native';
+import { Text, View, TextInput, TouchableOpacity,} from 'react-native';
 import styles from '../../style';
-
-
 
 export default function userCad ({navigation }) {
 
     //variaveis para armazenar os dados de entrada
-    const [emailCad, setemailCad] = useState(null)
-    const [nomeCad, setnomeCad] = useState(null)
-    const [cpf, setCPF] = useState(null)
-    const [tell, setTell] = useState(null)
-    const [senha, setSenha] = useState(null)
-    const [confirmSenha, setconfirmSenha] = useState(null)
-    const [mensagem, setMensagem] = useState(null)
+    const [emailCad, setemailCad] = useState(null);
+    const [nomeCad, setnomeCad] = useState(null);
+    const [cpf, setCPF] = useState(null);
+    const [tell, setTell] = useState(null);
+    const [senha, setSenha] = useState(null);
+    const [confirmSenha, setconfirmSenha] = useState(null);
+    const [mensagem, setMensagem] = useState(null);
     
     async function gravarDadosUsuario(){
         if(emailCad == null || nomeCad == null || cpf == null || tell == null || senha == null || confirmSenha == null){
@@ -21,20 +19,22 @@ export default function userCad ({navigation }) {
           setMensagem("Campo(s) em Vazio");
         }
         else{
-            if(senha == confirmSenha){        
-                let response = await fetch(input = 'http://192.168.0.17:3000/inserirUsuario', init = {
-                    method: 'Post',
+            setMensagem(null);
+            if(senha == confirmSenha){                        
+                let response = await fetch('http://192.168.0.106:3000/inserirUsuario',{
+                    method: 'POST',
                     headers: {
                         Accept: 'application/json',
                         'Content-Type': 'application/json'
                     },
                     //nao passei ID
-                    body: JSON.stringify(value = {                         
-                        emailCad: emailCad,
-                        nomeCad: nomeCad,
-                        cpf: cpf,
-                        tell: tell,
-                        senha: senha                    
+                    body: JSON.stringify({                         
+                        emailUser: emailCad,
+                        nomeUser: nomeCad,
+                        cpfUser: cpf,
+                        numTelUser: tell,
+                        senhaUser: senha,
+                        confSenhaUser: confirmSenha                    
                     })
                 });
 
@@ -51,15 +51,24 @@ export default function userCad ({navigation }) {
                 else{
                     setMensagem("Erro no cadastro do Usario");
                 }
-                setTimeout(handler = () =>{
+                /* setTimeout(handler = () =>{
                     setMensagem(null);
-                },timeout = 5000);                
+                },timeout = 5000);  */           
             }
             else{
                 //apresentar mensagem de senha desiguais
                 setMensagem("As senhas digitadas não são iguais");
             }
         }       
+    }
+
+    async function limparCampos(){
+        setemailCad(null);
+        setnomeCad(null);
+        setCPF(null);
+        setTell(null);
+        setSenha(null);
+        setconfirmSenha(null);
     }
 
     return (
@@ -125,13 +134,20 @@ export default function userCad ({navigation }) {
                     <View >
                         <TouchableOpacity
                             style = {styles.butaoBack}
-                            onPress = {() => {
-                                gravarDadosUsuario();
-                            }}
+                            onPress = {() => { gravarDadosUsuario(); }}
                             //onPress = {() => navigation.navigate('Logar')}
                         >
                             <Text style = {styles.textButaoCad} >Salvar Dados Inseridos</Text>
-                        </TouchableOpacity>                        
+                        </TouchableOpacity>    
+                        <TouchableOpacity
+                            style = {styles.butaoBack}
+                            onPress = {() => {
+                                limparCampos();                                
+                            }}                            
+                        >
+                            <Text style = {styles.textButaoCad} >Limpar os Campos</Text>
+                        </TouchableOpacity>   
+                                            
                     </View>                        
                 </View>     
            </View>

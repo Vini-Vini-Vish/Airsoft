@@ -6,6 +6,7 @@ const models = require('./models');
 const app = express();
 app.use(cors());
 app.use(bodyParser.urlencoded({extended : false}));
+app.use(bodyParser.json());
 
 let usuario = models.CadUsuario;
 let Loc = models.CadLoc;
@@ -27,6 +28,31 @@ app.get('/inserir',async(req,res)=>{
     });
     res.send('Usuario inserido com sucesso!');
 })
+
+//Inserir gravação por meio de chamada
+app.post('/inserirUsuario',async(req,res) => {
+    console.log(req.body);
+    let insere = await usuario.create({/*
+        emailUser: req.body.emailUser,
+        nomeUser: req.body.nomeUser,
+        cpfUser: req.body.cpfUser,
+        numTelUser: req.body.numTelUser,
+        senhaUser: req.body.senhaUser,
+        confSenhaUser: req.body.confSenhaUser,
+        createAt: new Date(),
+        updateAT: new Date()*/
+        emailUser: req.body.emailUser,
+        nomeUser: req.body.nomeUser,
+        cpfUser: req.body.cpfUser,
+        numTelUser: req.body.numTelUser,
+        senhaUser: req.body.senhaUser,
+        confSenhaUser: req.body.confSenhaUser,
+        createAt: new Date(),
+        updateAT: new Date()
+    });
+    console.log(insere);
+    res.send(JSON.stringify(value = 'Inclusao: ok'));
+});
 
 // Chamadas de Consulta
 
