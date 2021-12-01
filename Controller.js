@@ -13,6 +13,7 @@ let Iten = models.CadIten;
 
 //Chamada para Inserir dados
 
+//inserir cliente
 app.get('/inserir',async(req,res)=>{
     let inserir = await usuario.create({
         emailUser: "usuario_teste@gmail.com",
@@ -66,6 +67,17 @@ app.get('/alterar',async(req,res)=>{
 });
 
 //Fim Alteração
+
+//Chamada Exclusão
+
+app.get('/excluir',async(req,res)=>{
+    let excluir = await usuario.destroy({
+       where: { id: 7 } 
+    });
+    res.send("Dado excluido");
+});
+
+//Fim Exclusão
 
 app.get('/',(req,res) => {
     res.send('Servidor back-end funcionando');
