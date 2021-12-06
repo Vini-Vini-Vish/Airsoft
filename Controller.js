@@ -44,6 +44,12 @@ app.post('/ValidarUsuario',async(req,res) => {
     }
 });
 
+//Pega os dados para o perfil
+app.post('/ConsultarUsuario',async(req,res) =>{
+    let response = await usuario.findOne({where:{emailUser:req.body.emailUser}});
+    res.send(response);
+})
+
 //----------------------------------------------------------------------------------------
 //Chamada para Inserir dados
 

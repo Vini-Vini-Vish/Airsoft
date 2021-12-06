@@ -6,7 +6,7 @@ export default function LoginUser ({navigation }) {
 
     const [emaiLogin, setemaiLogin] = useState(null);
     const [senhaLogin, setsenhaLogin ] = useState(null);
-
+    
     const [senha, setSenha] = useState(null);
     const [mensagem, setMensagem] = useState(null);
 
@@ -27,14 +27,14 @@ export default function LoginUser ({navigation }) {
           })
         });
         let json = await response.json();
-        console.log(json);
+        //console.log(json);
         if(json == 'erro'){
           setMensagem("Usuario não Encontrado")
         }
         else{
-          setSenha(json.senhaUser);
-          if(senhaLogin == senha){
-            navigation.navigate('Pagina');
+          setSenha(json.senhaUser);          
+          if(senhaLogin == senha){            
+            navigation.navigate('Pagina', {email:emaiLogin});
           }
           else{
             setMensagem("A senha digitada errada")

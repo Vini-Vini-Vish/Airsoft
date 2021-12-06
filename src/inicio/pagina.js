@@ -2,7 +2,10 @@ import React from 'react';
 import { Text, View, Button } from 'react-native';
 import styles from '../../style';
 
-export default function PaginaPrincipal ({navigation }) {
+export default function PaginaPrincipal ({navigation, route }) {
+
+  const {email} = route.params;
+
   return (
     <View style = {styles.boxFora}>
       <View style = {styles.container}>
@@ -45,7 +48,7 @@ export default function PaginaPrincipal ({navigation }) {
               <View style = {styles.textButaoComun}> 
                 <Button 
                   title = 'Alterar Dados de Perfil'
-                  onPress = {() => navigation.navigate('alterarUser')}
+                  onPress = {() => navigation.navigate('alterarUser', {email:email})}
                 ></Button>
               </View>
             </View>
