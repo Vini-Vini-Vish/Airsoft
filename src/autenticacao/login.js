@@ -6,6 +6,8 @@ export default function LoginUser ({navigation }) {
 
     const [emaiLogin, setemaiLogin] = useState(null);
     const [senhaLogin, setsenhaLogin ] = useState(null);
+
+    const [senha, setSenha] = useState(null);
     const [mensagem, setMensagem] = useState(null);
 
     async function Validarlogin(){
@@ -30,7 +32,8 @@ export default function LoginUser ({navigation }) {
           setMensagem("Usuario não Encontrado")
         }
         else{
-          if(setsenhaLogin == json.senhaUser){
+          setSenha(json.senhaUser);
+          if(senhaLogin == senha){
             navigation.navigate('Pagina');
           }
           else{
