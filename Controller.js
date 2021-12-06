@@ -12,6 +12,32 @@ let usuario = models.CadUsuario;
 let Loc = models.CadLoc;
 let Iten = models.CadIten;
 
+//----------------------------------------------------------------------------------------
+
+//Inserir gravação por meio de chamada
+app.post('/inserirUsuario',async(req,res) => {
+    //console.log(req.body);
+    let insere = await usuario.create({        
+        emailUser: req.body.emailUser,
+        nomeUser: req.body.nomeUser,
+        cpfUser: req.body.cpfUser,
+        numTelUser: req.body.numTelUser,
+        senhaUser: req.body.senhaUser,
+        confSenhaUser: req.body.confSenhaUser,
+        createAt: new Date(),
+        updateAT: new Date()
+    });
+    console.log(insere);
+    res.send(JSON.stringify(value = 'Inclusao: ok'));
+});
+
+//Verifica os dados de login
+app.post('/ValidarUsuario',async(req,res) => {
+    let response = await usuario.findOne({where:{emailUser:req.body.emailUser}});
+    console.log(response);
+})
+
+//----------------------------------------------------------------------------------------
 //Chamada para Inserir dados
 
 //inserir cliente
@@ -28,31 +54,6 @@ app.get('/inserir',async(req,res)=>{
     });
     res.send('Usuario inserido com sucesso!');
 })
-
-//Inserir gravação por meio de chamada
-app.post('/inserirUsuario',async(req,res) => {
-    console.log(req.body);
-    let insere = await usuario.create({/*
-        emailUser: req.body.emailUser,
-        nomeUser: req.body.nomeUser,
-        cpfUser: req.body.cpfUser,
-        numTelUser: req.body.numTelUser,
-        senhaUser: req.body.senhaUser,
-        confSenhaUser: req.body.confSenhaUser,
-        createAt: new Date(),
-        updateAT: new Date()*/
-        emailUser: req.body.emailUser,
-        nomeUser: req.body.nomeUser,
-        cpfUser: req.body.cpfUser,
-        numTelUser: req.body.numTelUser,
-        senhaUser: req.body.senhaUser,
-        confSenhaUser: req.body.confSenhaUser,
-        createAt: new Date(),
-        updateAT: new Date()
-    });
-    console.log(insere);
-    res.send(JSON.stringify(value = 'Inclusao: ok'));
-});
 
 // Chamadas de Consulta
 

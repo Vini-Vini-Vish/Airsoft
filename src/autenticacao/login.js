@@ -1,8 +1,33 @@
 import React from 'react';
 import {Text, View, Button, TextInput, } from 'react-native';
+import { useState } from 'react/cjs/react.development';
 import styles from '../../style';
 
 export default function LoginUser ({navigation }) {
+
+    const [emaiLogin, setemaiLogin] = useState(null);
+    const [senhaLogin, setsenhaLogin ] = useState(null);
+    const [mensagem, setMensagem] = useState(null);
+
+    async function Validarlogin(){
+      if(emaiLogin == null || senhaLogin == null){
+        setMensagem("Ha campos vazios!");
+      }
+      else{
+        let response = await fetch('http://192.168.0.106:3000/ValidarUsuario',{
+          method: 'POST',
+          headers: {
+              Accept: 'application/json',
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            emailUser: emaiLogin,
+            //senhaUser: senhaLogin
+          })
+        });
+      }
+    }
+
     return (
         <View style = {styles.boxFora}>       
 
@@ -16,19 +41,23 @@ export default function LoginUser ({navigation }) {
               <TextInput 
                 style = {styles.textInput}
                 placeholder = 'nome@gmail.com'
-                //value={text} tem que criar a variavel
+                onChangeText = {setemaiLogin}
+                value = {emaiLogin} 
               ></TextInput>   
 
               <TextInput 
                 style = {styles.textInput}
                 placeholder = '15afaf475'
                 keyboardType = 'numeric'
+                onChangeText = {setsenhaLogin}
+                value = {senhaLogin}
               ></TextInput>
 
               <View style = {styles.textButao}>
                 <Button  
                   title = 'Logar'
-                  onPress = {() => navigation.navigate('Pagina')}
+                  onPress = {() => { Validarlogin(); }}
+                  //onPress = {() => navigation.navigate('Pagina')}
                 ></Button>
               </View>                               
 
@@ -37,7 +66,7 @@ export default function LoginUser ({navigation }) {
 
                 <View style = {styles.textButao}>
                   <Button                         
-                  title = 'Cadastro de Usuario'
+                  title = 'Cadastro de Usuario'                  
                   onPress = {() => navigation.navigate('CadastrarUser')}
                   ></Button>  
                 </View>    
