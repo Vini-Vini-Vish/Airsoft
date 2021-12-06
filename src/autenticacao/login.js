@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {Text, View, Button, TextInput, } from 'react-native';
-import { useState } from 'react/cjs/react.development';
 import styles from '../../style';
 
 export default function LoginUser ({navigation }) {
@@ -25,6 +24,19 @@ export default function LoginUser ({navigation }) {
             //senhaUser: senhaLogin
           })
         });
+        let json = await response.json();
+        console.log(json);
+        if(json == 'erro'){
+          setMensagem("Usuario não Encontrado")
+        }
+        else{
+          if(setsenhaLogin == json.senhaUser){
+            navigation.navigate('Pagina');
+          }
+          else{
+            setMensagem("A senha digitada errada")
+          }
+        }
       }
     }
 
@@ -56,8 +68,7 @@ export default function LoginUser ({navigation }) {
               <View style = {styles.textButao}>
                 <Button  
                   title = 'Logar'
-                  onPress = {() => { Validarlogin(); }}
-                  //onPress = {() => navigation.navigate('Pagina')}
+                  onPress = {() => { Validarlogin(); }}                                    
                 ></Button>
               </View>                               
 

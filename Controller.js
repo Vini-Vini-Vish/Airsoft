@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const models = require('./models');
+const { Json } = require('sequelize/dist/lib/utils');
 
 const app = express();
 app.use(cors());
@@ -35,7 +36,13 @@ app.post('/inserirUsuario',async(req,res) => {
 app.post('/ValidarUsuario',async(req,res) => {
     let response = await usuario.findOne({where:{emailUser:req.body.emailUser}});
     console.log(response);
-})
+    if(response == null){
+        res.send(JSON.stringify(value = 'erro'));
+    }
+    else{
+        res.send(response);
+    }
+});
 
 //----------------------------------------------------------------------------------------
 //Chamada para Inserir dados
