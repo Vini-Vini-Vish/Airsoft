@@ -1,17 +1,22 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Text, View, Button, TextInput, } from 'react-native';
 import styles from '../../style';
 
 export default function perfilAlt ({navigation, route }) {
 
-    //const [email, setEmail] = useState(null);
+    const {email} = route.params;
+
+    const [user, setUser] = useState(null);    
+    const [emailUser, setemailUser] = useState(null);    
     const [nome, setNome] = useState(null);
     const [cpf, setCPF] = useState(null);
     const [tell, setTell] = useState(null);
     const [senha, setSenha] = useState(null);
     const [confSenha, setConfSenha] = useState(null);     
 
-    const {email} = route.params;
+    async function PegarDado() {
+        setemailUser(email);
+    };
   
     async function ConsultarDados(){
         let response = await fetch('http://192.168.0.106:3000/ConsultarUsuario',{
@@ -20,15 +25,32 @@ export default function perfilAlt ({navigation, route }) {
                 Accept: 'application/json',
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({
-                emailUser: email                
+            body: JSON.stringify({                
+                emailUser: emailUser                                
             })            
         });
         let json = await response.json();
+        setUser(json.id);
         setNome(json.nomeUser);
         setCPF(json.cpfUser);
-        setTell(json.numTelUser);        
-    };  
+        setTell(json.numTelUser); 
+        setSenha(json.senhaUser);
+        setConfSenha(json.confSenhaUser)       
+    }; 
+    
+    async function AlterarDados() {
+        let alterar = await fetch('http://192.168.0.106:3000/AlterarUsuario',{
+            method: 'POST',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({                
+                id: user                
+            })            
+        });
+        let json = await alterar.json();    
+    };
 
     return (     
 
@@ -45,8 +67,8 @@ export default function perfilAlt ({navigation, route }) {
                         <TextInput 
                             style = {styles.textInput}
                             //placeholder = 'nome@gmail.com'
-                            //onChangeText = {setEmail}
-                            value = {email} 
+                            onChangeText = {setemailUser}
+                            value = {emailUser} 
                         ></TextInput> 
 
                         <Text style = {styles.textCad}>Nome Completo</Text>
@@ -94,13 +116,14 @@ export default function perfilAlt ({navigation, route }) {
                     <View style = {styles.textButaoCad}>
                         <Button                         
                             title = 'Buscar Dados Salvos'
-                            onPress = {() => {ConsultarDados();}}
+                            onPress = {() => {PegarDado(); ConsultarDados();}}
                         ></Button>  
                     </View>  
                     <View style = {styles.textButaoCad}>
                         <Button                         
                             title = 'Editar Dados'
-                            onPress = {() => navigation.navigate('Pagina')}
+                            onPress = {() => {AlterarDados();}}
+                            //onPress = {() => navigation.navigate('Pagina')}
                         ></Button>  
                     </View>                       
                 </View>     

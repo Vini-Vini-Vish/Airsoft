@@ -50,6 +50,21 @@ app.post('/ConsultarUsuario',async(req,res) =>{
     res.send(response);
 })
 
+//aleteração do usuario(perfil)
+app.post('/AlterarUsuario',async(req,res) => {
+    let alterar = await usuario.update({       
+        emailUser: req.body.emailUser,
+        nomeUser: req.body.nomeUser,
+        cpfUser: req.body.cpfUser,
+        numTelUser: req.body.numTelUser,
+        senhaUser: req.body.senhaUser,
+        confSenhaUser: req.body.confSenhaUser,        
+        updateAT: new Date()
+    }, {where: {id: req.body.id}}
+    );    
+    res.send(alterar);
+})
+
 //----------------------------------------------------------------------------------------
 //Chamada para Inserir dados
 
