@@ -15,8 +15,18 @@ export default function EscolhasCA ({navigation }) {
                     {/* <Text style = {styles.textComunm}>Cadastro de Itens:</Text> */}
                     <View style = {styles.textButaoComun}> 
                       <Button  
-                          title = 'Cadastro de Itens'
+                          title = 'Cadastro de Armas e Munição'
                           onPress = {() => navigation.navigate('CadastrarIT')}
+                      ></Button>
+                    </View>
+                  </View>
+
+                  <View style = {styles.boxTextComun}>
+                    {/* <Text style = {styles.textComunm}>Cadastro de Itens:</Text> */}
+                    <View style = {styles.textButaoComun}> 
+                      <Button  
+                          title = 'Cadastro de Itens de Proteção'
+                          onPress = {() => navigation.navigate('CadastrarPR')}
                       ></Button>
                     </View>
                   </View>

@@ -60,9 +60,18 @@ app.post('/AlterarUsuario',async(req,res) => {
         senhaUser: req.body.senhaUser,
         confSenhaUser: req.body.confSenhaUser,        
         updateAT: new Date()
-    }, {where: {id: req.body.id}}
-    );    
+        }, 
+        {where: { id: req.body.id }}
+    ); 
+    console.log(alterar);   
     res.send(alterar);
+})
+
+//exclusão do usuario(perfil)
+app.post('/ExcluirUsuario', async(req,res) => {
+    let excluir = await usuario.destroy({
+        where: { id: req.body.id }
+    });    
 })
 
 //----------------------------------------------------------------------------------------

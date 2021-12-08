@@ -60,24 +60,24 @@ const styles = StyleSheet.create({
 
     textCad: {
       marginLeft: '5%',
-      marginTop: '3%',
+      marginTop: '1%',     
       textAlign: 'left',
-      paddingBottom: '2%',
+      paddingBottom: '1%',
       color: '#000000', 
       fontWeight: 'bold',
     },
 
-    boxCad: {
+    boxCad: {      
       backgroundColor: '#dcdcdc',
-      paddingBottom: '5%',      
-      paddingTop: '2%',
-      marginTop: '5%',    
+      paddingBottom: '1%',      
+      paddingTop: '1%',
+      marginTop: '1%',    
     },
 
     boxContainerCad: {      
-      marginRight: '2%',
-      marginLeft: '2%',
-      paddingBottom: '3%',
+      marginRight: '1%',
+      marginLeft: '1%',
+      //paddingBottom: '3%',
     },
 
     butaoBack: {
@@ -96,6 +96,7 @@ const styles = StyleSheet.create({
       lineHeight: 26,
       fontWeight: 'bold',
       backgroundColor: 'green',
+      marginTop:'1%'
     },
 
     textSubTitleLogin: {      

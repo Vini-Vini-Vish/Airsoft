@@ -30,15 +30,18 @@ export default function perfilAlt ({navigation, route }) {
             })            
         });
         let json = await response.json();
+        console.log(response);
         setUser(json.id);
         setNome(json.nomeUser);
         setCPF(json.cpfUser);
         setTell(json.numTelUser); 
         setSenha(json.senhaUser);
-        setConfSenha(json.confSenhaUser)       
+        setConfSenha(json.confSenhaUser);              
     }; 
     
     async function AlterarDados() {
+        console.log("Entrou no alterar()")
+
         let alterar = await fetch('http://192.168.0.106:3000/AlterarUsuario',{
             method: 'POST',
             headers: {
@@ -49,8 +52,29 @@ export default function perfilAlt ({navigation, route }) {
                 id: user                
             })            
         });
-        let json = await alterar.json();    
+        let json = await alterar.json();   
+        console.log(alterar); 
     };
+
+    async function DeletarDados() {
+        let response = await fetch('http://192.168.0.106:3000/ExcluirUsuario',{
+            method: 'POST',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({                
+                emailUser: emailUser                                
+            })            
+        });
+        setUser(null);
+        setemailUser(null);
+        setNome(null);
+        setCPF(null);
+        setTell(null); 
+        setSenha(null);
+        setConfSenha(null);
+    }
 
     return (     
 
@@ -123,6 +147,13 @@ export default function perfilAlt ({navigation, route }) {
                         <Button                         
                             title = 'Editar Dados'
                             onPress = {() => {AlterarDados();}}
+                            //onPress = {() => navigation.navigate('Pagina')}
+                        ></Button>  
+                    </View> 
+                    <View style = {styles.textButaoCad}>
+                        <Button                         
+                            title = 'Excluir Dados'
+                            onPress = {() => {DeletarDados();}}
                             //onPress = {() => navigation.navigate('Pagina')}
                         ></Button>  
                     </View>                       

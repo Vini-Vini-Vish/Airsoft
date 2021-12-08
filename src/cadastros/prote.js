@@ -1,12 +1,10 @@
 import React from 'react';
-import { Text, View, Button, TextInput, CheckBox, Picker } from 'react-native';
+import { Text, View, Button, TextInput, } from 'react-native';
 import styles from '../../style';
 
-export default function ItensCad ({navigation }) {
+export default function ProteCad ({navigation }) {
 
-    //const [selectedValue, setSelectedValue] = useState("Armas e Munição");
-
-    return (
+     return (
        <View style = {styles.boxFora}> 
 
             <View style = {styles.container}>
@@ -15,45 +13,19 @@ export default function ItensCad ({navigation }) {
                
                <View style = {styles.boxContainerCad}>
                
-                    <View style = {styles.boxCad}>
-{/* 
-                        <View >
-                            <Picker
-                                //selectedValue={selectedValue}
-                                style = {styles.selectBox}                                
-                                //onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
-                            >
-                                <Picker.Item label="Armas e Munição" value="ARMU" />
-                                <Picker.Item label="Itens de Proteção" value="IRPR" />
-                            </Picker>
-
-                        </View> */}
-                        
-                        {/* <View style={styles.checkboxContainer}>
-                            <CheckBox
-                                //value={isSelected}
-                                //onValueChange={setSelection}                                
-                            />
-                            <Text style={styles.label}>Armas e Munição</Text>
-
-                            <CheckBox
-                                //value={isSelected}
-                                //onValueChange={setSelection}                                
-                            />
-                            <Text style={styles.label}>Itens de Proteção</Text>
-                        </View>  */}                       
+                    <View style = {styles.boxCad}>                              
                                         
-                        <Text style = {styles.textCad}>Insira o Nome do Item Desejado</Text>
+                        <Text style = {styles.textCad}>Insira o Nome do Item</Text>
                         <TextInput 
                             style = {styles.textInput}
-                            placeholder = 'Fuzil de Assalto M4A1'
+                            placeholder = 'Colete de Proteção'
                             //value={text} tem que criar a variavel
                         ></TextInput> 
 
                         <Text style = {styles.textCad}>Descrição do Item</Text>
                         <TextInput 
                             style = {styles.textInput}
-                            placeholder = 'Material de ferro, com peças anexadas de outras armas.....'
+                            placeholder = 'Material de borracha.....'
                             //value={text} tem que criar a variavel
                         ></TextInput> 
 
@@ -81,7 +53,7 @@ export default function ItensCad ({navigation }) {
                         <Text style = {styles.textCad}>Condições do Item e reparos feitos</Text>
                         <TextInput 
                             style = {styles.textInput}
-                            placeholder = 'Boas Condições de uso,Foi trocado o gatilho....'
+                            placeholder = 'Boas Condições de uso,Foi trocado o a espuma interna....'
                             //value={text} tem que criar a variavel
                         ></TextInput> 
 

@@ -12,6 +12,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       CadUsuario.hasMany(models.CadIten)
       CadUsuario.hasMany(models.CadLoc)
+      CadUsuario.hasMany(models.CadPro)
     }
   };
   CadUsuario.init({
