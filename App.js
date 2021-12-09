@@ -13,6 +13,8 @@ import LocalCad from '../airsoft/src/cadastros/local'
 import userCad from '../airsoft/src/cadastros/usuario'
 import perfilAlt from '../airsoft/src/usuario/perfil'
 import Mural_ARMU from './src/mural/ar_mu';
+import Mural_ITENS from './src/mural/it_pr'
+import Mural_LOPR from './src/mural/lcp'
 
 const Stack = createNativeStackNavigator();
 
@@ -22,15 +24,20 @@ export default function App() {
       <Stack.Navigator>
         
        {/*  <Stack.Screen name = "Logar" component = {LoginUser} />
-        <Stack.Screen name = "Pagina" component = {PaginaPrincipal} />
+        <Stack.Screen name = "Pagina" component = {PaginaPrincipal} /> */}
+
         <Stack.Screen name = "EscolherMU" component = {EscolhasMU} />
+        <Stack.Screen name = "ARMU" component = {Mural_ARMU} />
+        <Stack.Screen name = "PROT" component = {Mural_ITENS} />
+        <Stack.Screen name = "LocalPR" component = {Mural_LOPR} />
+
         <Stack.Screen name = "EscolherCA" component = {EscolhasCA} />
         <Stack.Screen name = "CadastrarIT" component = {ItensCad} />
         <Stack.Screen name = "CadastrarPR" component = {ProteCad} />
         <Stack.Screen name = "CadastrarLo" component = {LocalCad} />
         <Stack.Screen name = "CadastrarUser" component = {userCad} />
-        <Stack.Screen name = "alterarUser" component = {perfilAlt} /> */}
-        <Stack.Screen name = "ARMU" component = {Mural_ARMU} />
+        <Stack.Screen name = "alterarUser" component = {perfilAlt} /> 
+       
 
       </Stack.Navigator>
     </NavigationContainer>

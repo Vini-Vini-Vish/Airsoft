@@ -11,28 +11,25 @@ export default function EscolhasMU ({navigation }) {
                 <Text style = {styles.boxTitleBase}>ESCOLHA A OPÇÃO DESEJADA:</Text>
 
                 <View style = {styles.textCorpo}>
-                  <View style = {styles.boxTextComun}>
-                    {/* <Text style = {styles.textComunm}>Esta opção contem os anuncios de armas e munições, podendo ser compra de munições, e o aluguel e compra de armas.</Text> */}
+                  <View style = {styles.boxTextComun}>                    
                     <View style = {styles.textButaoComun}> 
                       <Button  
                         title = 'Armas e Munição'
-                        //onPress = {() => navigation.navigate('')}
+                        onPress = {() => navigation.navigate('ARMU')}
                       ></Button>
                     </View>
                   </View>
 
-                  <View style = {styles.boxTextComun}>
-                    {/* <Text style = {styles.textComunm}>Esta opção contem os anuncios de equipamentos de proteção podendo ser compra ou aluguel.</Text> */}
+                  <View style = {styles.boxTextComun}>                    
                     <View style = {styles.textButaoComun}> 
                       <Button 
                         title = 'Itens de Proteção'
-                        //onPress = {() => navigation.navigate('')}
+                        onPress = {() => navigation.navigate('PROT')}
                       ></Button>
                     </View>
                   </View>
 
-                  <View style = {styles.boxTextComun}>
-                    {/* <Text style = {styles.textComunm}>A se adicionar: alugar terrenos que possam ser construidas estruturas temporarias para jogos, por tempos defenidos (dias, meses, anos).</Text> */}
+                  <View style = {styles.boxTextComun}>                    
                     <View style = {styles.textButaoComun}> 
                       <Button 
                         title = 'Locar Campo Custom (EM BREVE)'
@@ -41,12 +38,11 @@ export default function EscolhasMU ({navigation }) {
                     </View>
                   </View>
 
-                  <View style = {styles.boxTextComun}>
-                    {/* <Text style = {styles.textComunm}>Alugar campos que já possuem estruturas construidas para jogos, por tempos defenidos (dias, meses, anos).</Text> */}
+                  <View style = {styles.boxTextComun}>                    
                     <View style = {styles.textButaoComun}> 
                       <Button 
                           title = 'Locar Campo Pronto'
-                          //onPress = {() => navigation.navigate('')}
+                          onPress = {() => navigation.navigate('LocalPR')}
                       ></Button> 
                     </View>
                   </View> 

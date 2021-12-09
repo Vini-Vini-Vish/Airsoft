@@ -10,7 +10,7 @@ export default function Mural_ARMU({navigation}) {
 
     console.log(setlistaItens);  
     try {
-      let response = await fetch('http://192.168.0.106:3000/ListaItens', {
+      let response = await fetch('http://192.168.0.106:3000/ListaIArmu', {
         method: 'POST',
         headers: {
           Accept: 'application/json',
@@ -36,7 +36,7 @@ export default function Mural_ARMU({navigation}) {
             renderItem = {({item}) =>
               <View style = {styles.lista}>
                 <Text style = {styles.textoLista}>Nome do Item: {item.nomeIt}]</Text>
-                <Text style = {styles.textoLista}>{item.desIt}</Text>
+                <Text style = {styles.textoLista}>Descrição: {item.desIt}</Text>
                 <Text style = {styles.textoLista}>Valor: {item.precoIt}</Text>               
               </View>
           }
@@ -45,7 +45,7 @@ export default function Mural_ARMU({navigation}) {
           <TouchableOpacity            
             onPress = {() => {Listar();}}
           >
-            <Text style = {styles.textButaoCad}>Listar Itens</Text>
+            <Text style = {styles.textButaoCad}>Listar Armas</Text>
           </TouchableOpacity>
 
         </View>

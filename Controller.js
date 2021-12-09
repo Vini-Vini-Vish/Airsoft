@@ -133,12 +133,27 @@ app.post('/InserirLocal',async(req,res) => {
 
 //----------------------------FlatList Armu-----------------------------------------------
 
-app.post('/ListaItens',async(req,res) => {
+app.post('/ListaIArmu',async(req,res) => {
     let response = await iten.findAll({attributes: ['id', 'nomeIt', 'desIt', 'anoComIt', 'desAquiIt', 'desNacIt', 'condIt', 'precoIt', 'cadUserId' ]}); 
     console.log(response);
     res.send(response);    
 });
 
+//----------------------------FlatList Itens----------------------------------------------
+
+app.post('/ListaItens',async(req,res) => {
+    let response = await protecao.findAll({attributes: ['id', 'nomeIt', 'desIt', 'anoComIt', 'desAquiIt', 'desNacIt', 'condIt', 'precoIt', 'cadUserId' ]}); 
+    console.log(response);
+    res.send(response);    
+});
+
+//----------------------------FlatList Local Pronto----------------------------------------------
+
+app.post('/ListaLocalPronto',async(req,res) => {
+    let response = await loc.findAll({attributes: ['id', 'nomeLoc', 'desLoc', 'cidLoc', 'endLoc', 'numTelLoc', 'valAluLoc', 'cadUserId' ]}); 
+    console.log(response);
+    res.send(response);    
+});
 
 //----------------------------------------------------------------------------------------
 

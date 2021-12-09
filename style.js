@@ -211,12 +211,15 @@ const styles = StyleSheet.create({
     },
 
     lista: {
-      backgroundColor: "#00ffff",   
+      backgroundColor: "#a9a9a9",   
       justifyContent: "center",
       paddingLeft: '10%',
       alignItems: "right",
       marginBottom: '1%',
-      marginTop: '1%',     
+      marginTop: '1%',  
+      borderWidth: 2,
+      marginLeft: '10%',
+      marginRight: '10%',
     },
 
     textoLista: {
