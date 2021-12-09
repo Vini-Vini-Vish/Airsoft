@@ -21,7 +21,7 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
         
-        <Stack.Screen name = "Logar" component = {LoginUser} />
+       {/*  <Stack.Screen name = "Logar" component = {LoginUser} />
         <Stack.Screen name = "Pagina" component = {PaginaPrincipal} />
         <Stack.Screen name = "EscolherMU" component = {EscolhasMU} />
         <Stack.Screen name = "EscolherCA" component = {EscolhasCA} />
@@ -29,7 +29,7 @@ export default function App() {
         <Stack.Screen name = "CadastrarPR" component = {ProteCad} />
         <Stack.Screen name = "CadastrarLo" component = {LocalCad} />
         <Stack.Screen name = "CadastrarUser" component = {userCad} />
-        <Stack.Screen name = "alterarUser" component = {perfilAlt} />
+        <Stack.Screen name = "alterarUser" component = {perfilAlt} /> */}
         <Stack.Screen name = "ARMU" component = {Mural_ARMU} />
 
       </Stack.Navigator>

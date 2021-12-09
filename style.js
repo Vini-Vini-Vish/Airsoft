@@ -198,6 +198,27 @@ const styles = StyleSheet.create({
       height: 35, 
       width: '97%', 
       alignSelf: 'center' 
+    },
+
+    lista: {
+      backgroundColor: "orange",
+      height: 80,
+      margin: 5,
+      justifyContent: "center",
+      alignItems: "center",
+      borderRadius: 20,
+    },
+
+    textoLista: {
+      color: "white",
+      fontWeight: "bold",
+      fontSize: 24,
+    },
+
+    texto2Lista: {
+      color: "gray",
+      fontWeight: "bold",
+      fontSize: 18,
     }
   
   });

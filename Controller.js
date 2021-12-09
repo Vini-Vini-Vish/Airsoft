@@ -131,6 +131,15 @@ app.post('/InserirLocal',async(req,res) => {
     res.send(insere);
 })
 
+//----------------------------FlatList Armu-----------------------------------------------
+
+app.post('/ListaUsuario',async(req,res) => {
+    let response = await iten.findAll(); 
+    console.log(response);
+    res.send(response);    
+});
+
+
 //----------------------------------------------------------------------------------------
 
 //Chamada para Inserir dados

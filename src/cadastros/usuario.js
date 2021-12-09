@@ -39,21 +39,8 @@ export default function userCad ({navigation }) {
                 });
 
                 let json = await response.json();
-                if(json == 'Inclusao: ok'){
-                    setMensagem("Usuario cadastrado com sucesso");
-                    setemailCad(null);
-                    setnomeCad(null);
-                    setCPF(null);
-                    setTell(null);
-                    setSenha(null);
-                    setconfirmSenha(null);
-                }
-                else{
-                    setMensagem("Erro no cadastro do Usario");
-                }
-                /* setTimeout(handler = () =>{
-                    setMensagem(null);
-                },timeout = 5000);  */           
+                
+                navigation.navigate('Logar');
             }
             else{
                 //apresentar mensagem de senha desiguais
@@ -134,21 +121,10 @@ export default function userCad ({navigation }) {
                     <View >
                         <TouchableOpacity
                             style = {styles.butaoBack}
-                            onPress = {() => { gravarDadosUsuario(); }}
-                            //onPress = {() => navigation.navigate('Logar')}
+                            onPress = {() => { gravarDadosUsuario(); }}                            
                         >
                             <Text style = {styles.textButaoCad} >Salvar Dados Inseridos</Text>
-                        </TouchableOpacity> 
-                           
-                        <TouchableOpacity
-                            style = {styles.butaoBack}
-                            onPress = {() => {
-                                limparCampos();                                
-                            }}                            
-                        >
-                            <Text style = {styles.textButaoCad} >Limpar os Campos</Text>
-                        </TouchableOpacity>   
-                                            
+                        </TouchableOpacity>                                           
                     </View>                        
                 </View>     
            </View>
