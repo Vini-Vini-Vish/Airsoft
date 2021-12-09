@@ -40,13 +40,8 @@ export default function ProteCad ({navigation, route }) {
             })
             let json = await inserir.json();
             console.log(json);
-            setNome(null);
-            setDesc(null);
-            setAno(null);
-            setAdq(null);
-            setANaci(null);
-            setCondi(null);
-            setPre(null);
+           
+            navigation.navigate('Pagina', {idUser});     
         }
     }    
 

@@ -38,13 +38,10 @@ export default function LocalCad ({navigation, route }) {
                 })
             })
             let json = await inserir.json();
-            console.log(json);
-            setNome(null);
-            setDesc(null);
-            setCidade(null);
-            setEndereco(null);
-            setTelefone(null);
-            setValorDiaria(null);            
+            console.log(json);            
+
+            navigation.navigate('Pagina', {idUser});     
+
         }
     }    
 
@@ -110,7 +107,7 @@ export default function LocalCad ({navigation, route }) {
                                 
                     <View >                        
                         <TouchableOpacity                            
-                            onPress = {() => { Cadastrar(); }}                           
+                            onPress = {() => { Cadastrar();}}                                                       
                         >
                             <Text style = {styles.textButaoCad} >Cadastrar</Text>
                         </TouchableOpacity>                         
