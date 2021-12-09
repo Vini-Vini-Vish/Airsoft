@@ -1,10 +1,54 @@
-import React from 'react';
-import { Text, View, Button, TextInput, CheckBox, Picker } from 'react-native';
+import React, { useState } from 'react';
+import { Text, View, TouchableOpacity, TextInput, } from 'react-native';
 import styles from '../../style';
 
-export default function ItensCad ({navigation }) {
+export default function ItensCad ({navigation, route }) {
 
-    //const [selectedValue, setSelectedValue] = useState("Armas e Munição");
+    //dados usuario
+    const {idUser} = route.params;
+
+    //dados Item
+    const [nome, setNome] = useState(null);
+    const [descricao, setDesc] = useState(null);
+    const [ano, setAno] = useState(null);
+    const [adquirido, setAdq] = useState(null);
+    const [nacionalidade, setANaci] = useState(null);
+    const [condicao, setCondi] = useState(null);
+    const [preco, setPre] = useState(null);
+
+    async function Cadastrar() {
+        if(nome == null || descricao == null || ano == null || adquirido == null || nacionalidade == null || condicao == null || preco == null){
+            //erro
+        }
+        else{
+            let inserir = await fetch('http://192.168.0.106:3000/InserirArma',{
+                method: 'POST',
+                headers: {
+                    Accept: 'application/json',
+                        'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    nomeIt: nome,
+                    desIt: descricao,
+                    anoComIt: ano,
+                    desAquiIt: adquirido,
+                    desNacIt: nacionalidade,
+                    condIt: condicao,
+                    precoIt: preco,
+                    cadUserId: idUser
+                })
+            })
+            let json = await inserir.json();
+            console.log(json);
+            setNome(null);
+            setDesc(null);
+            setAno(null);
+            setAdq(null);
+            setANaci(null);
+            setCondi(null);
+            setPre(null);
+        }
+    }    
 
     return (
        <View style = {styles.boxFora}> 
@@ -15,90 +59,72 @@ export default function ItensCad ({navigation }) {
                
                <View style = {styles.boxContainerCad}>
                
-                    <View style = {styles.boxCad}>
-{/* 
-                        <View >
-                            <Picker
-                                //selectedValue={selectedValue}
-                                style = {styles.selectBox}                                
-                                //onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
-                            >
-                                <Picker.Item label="Armas e Munição" value="ARMU" />
-                                <Picker.Item label="Itens de Proteção" value="IRPR" />
-                            </Picker>
-
-                        </View> */}
-                        
-                        {/* <View style={styles.checkboxContainer}>
-                            <CheckBox
-                                //value={isSelected}
-                                //onValueChange={setSelection}                                
-                            />
-                            <Text style={styles.label}>Armas e Munição</Text>
-
-                            <CheckBox
-                                //value={isSelected}
-                                //onValueChange={setSelection}                                
-                            />
-                            <Text style={styles.label}>Itens de Proteção</Text>
-                        </View>  */}                       
+                    <View style = {styles.boxCad}>                                         
                                         
-                        <Text style = {styles.textCad}>Insira o Nome do Item Desejado</Text>
+                        <Text style = {styles.textCad}>Insira o Nome do Item</Text>
                         <TextInput 
                             style = {styles.textInput}
                             placeholder = 'Fuzil de Assalto M4A1'
-                            //value={text} tem que criar a variavel
+                            onChangeText = {setNome}
+                            value = {nome} 
                         ></TextInput> 
 
                         <Text style = {styles.textCad}>Descrição do Item</Text>
                         <TextInput 
                             style = {styles.textInput}
                             placeholder = 'Material de ferro, com peças anexadas de outras armas.....'
-                            //value={text} tem que criar a variavel
+                            onChangeText = {setDesc}
+                            value = {descricao} 
                         ></TextInput> 
 
                         <Text style = {styles.textCad}>Ano de Compra</Text>
                         <TextInput 
                             style = {styles.textInput}
                             placeholder = '2015'
-                            //value={text} tem que criar a variavel
+                            onChangeText = {setAno}
+                            value = {ano} 
                         ></TextInput> 
 
                         <Text style = {styles.textCad}>Foi adquirido: Novo/Semi Novo/Usado</Text>
                         <TextInput 
                             style = {styles.textInput}
                             placeholder = 'Usado, comprado com 2 anos de uso'
-                            //value={text} tem que criar a variavel
+                            onChangeText = {setAdq}
+                            value = {adquirido} 
                         ></TextInput> 
 
                         <Text style = {styles.textCad}>Importado ou Compra Nacional</Text>
                         <TextInput 
                             style = {styles.textInput}
                             placeholder = 'Nacional'
-                            //value={text} tem que criar a variavel
+                            onChangeText = {setANaci}
+                            value = {nacionalidade} 
                         ></TextInput> 
 
                         <Text style = {styles.textCad}>Condições do Item e reparos feitos</Text>
                         <TextInput 
                             style = {styles.textInput}
                             placeholder = 'Boas Condições de uso,Foi trocado o gatilho....'
-                            //value={text} tem que criar a variavel
+                            onChangeText = {setCondi}
+                            value = {condicao} 
                         ></TextInput> 
 
                         <Text style = {styles.textCad}>Preço</Text>
                         <TextInput 
                             style = {styles.textInput}
                             placeholder = 'Valor a ser anunciado.'
-                            //value={text} tem que criar a variavel
+                            onChangeText = {setPre}
+                            value = {preco} 
                         ></TextInput> 
 
                     </View>
                                 
-                    <View style = {styles.textButaoCad}>
-                        <Button                         
-                            title = 'Salvar Dados Inseridos'
-                            onPress = {() => navigation.navigate('Pagina')}
-                        ></Button>  
+                    <View >                        
+                        <TouchableOpacity                            
+                            onPress = {() => { Cadastrar(); }}                           
+                        >
+                            <Text style = {styles.textButaoCad} >Cadastrar</Text>
+                        </TouchableOpacity>                         
                     </View>                        
                 </View>     
            </View>

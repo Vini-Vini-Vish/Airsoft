@@ -10,10 +10,11 @@ app.use(bodyParser.urlencoded({extended : false}));
 app.use(bodyParser.json());
 
 let usuario = models.CadUsuario;
-let Loc = models.CadLoc;
-let Iten = models.CadIten;
+let loc = models.CadLoc;
+let iten = models.CadIten;
+let protecao = models.CadPro;
 
-//----------------------------------------------------------------------------------------
+//---------------------------------Usuario-------------------------------------------------------
 
 //Inserir gravação por meio de chamada
 app.post('/inserirUsuario',async(req,res) => {
@@ -74,7 +75,46 @@ app.post('/ExcluirUsuario', async(req,res) => {
     });    
 })
 
+//------------------------------------Armas e Munições----------------------------------------------------
+
+app.post('/InserirArma',async(req,res) => {
+    let insere = await iten.create({
+        nomeIt: req.body.nomeIt,
+        desIt: req.body.desIt,
+        anoComIt: req.body.anoComIt,
+        desAquiIt: req.body.desAquiIt,
+        desNacIt: req.body.desNacIt,
+        condIt: req.body.condIt,
+        precoIt: req.body.precoIt,
+        cadUserId: req.body.cadUserId,
+        createAt: new Date(),
+        updateAT: new Date()
+    });
+    console.log(insere);
+    res.send(insere);
+})
+
+//------------------------------------Itens de Proteção----------------------------------------------------
+
+app.post('/InserirItem',async(req,res) => {
+    let insere = await protecao.create({
+        nomeIt: req.body.nomeIt,
+        desIt: req.body.desIt,
+        anoComIt: req.body.anoComIt,
+        desAquiIt: req.body.desAquiIt,
+        desNacIt: req.body.desNacIt,
+        condIt: req.body.condIt,
+        precoIt: req.body.precoIt,
+        cadUserId: req.body.cadUserId,
+        createAt: new Date(),
+        updateAT: new Date()
+    });
+    console.log(insere);
+    res.send(insere);
+})
+
 //----------------------------------------------------------------------------------------
+
 //Chamada para Inserir dados
 
 //inserir cliente

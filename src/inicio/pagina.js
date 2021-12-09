@@ -4,7 +4,8 @@ import styles from '../../style';
 
 export default function PaginaPrincipal ({navigation, route }) {
 
-  const {email} = route.params;
+  //const {email} = route.params;
+  const {idUser} = route.params;
 
   return (
     <View style = {styles.boxFora}>
@@ -15,26 +16,20 @@ export default function PaginaPrincipal ({navigation, route }) {
             <Text style = {styles.textTitle}>Podendo alugar campos para realizar jogos fechados.</Text>
             <Text style = {styles.textTitle}>App para compra ou aluguel de intens para jogos.</Text>
 
-          </View>           
-
-         {/*  <View>
-            <Text style = {styles.textSubTitle}>ESCOLHA A OPÇÃO DESEJADA:</Text>          
-          </View> */}
+          </View>         
 
           <View style = {styles.textCorpo}>
 
-            <View style = {styles.boxTextComun}>
-              {/* <Text style = {styles.textComunm}>Cadastros:</Text> */}
+            <View style = {styles.boxTextComun}>              
               <View style = {styles.textButaoComun}>               
                 <Button  
                   title = 'Cadastros'
-                  onPress = {() => navigation.navigate('EscolherCA')}
+                  onPress = {() => navigation.navigate('EscolherCA', {idUser})}
                 ></Button>
               </View>
             </View>            
 
-            <View style = {styles.boxTextComun}>
-              {/* <Text style = {styles.textComunm}>Mural de Publicações:</Text>           */}
+            <View style = {styles.boxTextComun}>                       
               <View style = {styles.textButaoComun}> 
                 <Button 
                   title = 'Mural de Publicações'
@@ -43,12 +38,12 @@ export default function PaginaPrincipal ({navigation, route }) {
               </View>
             </View>
 
-            <View style = {styles.boxTextComun}>
-              {/* <Text style = {styles.textComunm}>Alterar Dados de Perfil:</Text> */}
+            <View style = {styles.boxTextComun}>              
               <View style = {styles.textButaoComun}> 
                 <Button 
                   title = 'Alterar Dados de Perfil'
-                  onPress = {() => navigation.navigate('alterarUser', {email:email})}
+                  //onPress = {() => navigation.navigate('alterarUser', {email:email})}
+                  onPress = {() => navigation.navigate('alterarUser')}
                 ></Button>
               </View>
             </View>

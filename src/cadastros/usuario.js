@@ -138,7 +138,8 @@ export default function userCad ({navigation }) {
                             //onPress = {() => navigation.navigate('Logar')}
                         >
                             <Text style = {styles.textButaoCad} >Salvar Dados Inseridos</Text>
-                        </TouchableOpacity>    
+                        </TouchableOpacity> 
+                           
                         <TouchableOpacity
                             style = {styles.butaoBack}
                             onPress = {() => {

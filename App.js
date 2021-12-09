@@ -21,8 +21,8 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
         
-        {/* <Stack.Screen name = "Logar" component = {LoginUser} /> */}
-        {/* <Stack.Screen name = "Pagina" component = {PaginaPrincipal} /> */}
+        <Stack.Screen name = "Logar" component = {LoginUser} />
+        <Stack.Screen name = "Pagina" component = {PaginaPrincipal} />
         <Stack.Screen name = "EscolherMU" component = {EscolhasMU} />
         <Stack.Screen name = "EscolherCA" component = {EscolhasCA} />
         <Stack.Screen name = "CadastrarIT" component = {ItensCad} />
