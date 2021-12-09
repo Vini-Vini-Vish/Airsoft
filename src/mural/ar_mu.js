@@ -27,7 +27,7 @@ export default function Mural_ARMU({navigation}) {
       <View style = {styles.boxFora}>  
         <View style = {styles.container}>
           <View>
-            <Text style = {styles.boxTitleBase}>Mural de Armas e Munições</Text>     
+            <Text style = {styles.boxTitleBaseMural}>Mural de Armas e Munições</Text>     
           </View>
 
           <FlatList
@@ -35,9 +35,9 @@ export default function Mural_ARMU({navigation}) {
             keyExtractor = {(item) => item.id.toString()}
             renderItem = {({item}) =>
               <View style = {styles.lista}>
-                <Text style = {styles.textoLista}>{item.nomeIt}</Text>
+                <Text style = {styles.textoLista}>Nome do Item: {item.nomeIt}]</Text>
                 <Text style = {styles.textoLista}>{item.desIt}</Text>
-                <Text style = {styles.textoLista}>{item.precoIt}</Text>
+                <Text style = {styles.textoLista}>Valor: {item.precoIt}</Text>               
               </View>
           }
           ></FlatList>

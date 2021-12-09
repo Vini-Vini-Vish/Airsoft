@@ -32,6 +32,16 @@ const styles = StyleSheet.create({
         color: 'white'      
     }, 
 
+    boxTitleBaseMural: {
+      padding: 30,
+      backgroundColor: '#b22222',  
+      textAlign: 'center',   
+      lineHeight: 26,
+      fontWeight: 'bold',
+      fontSize: 23,   
+      color: 'white'      
+  }, 
+
     checkboxContainer: {
       flexDirection: "row",
       marginTop: '1%',
@@ -201,25 +211,19 @@ const styles = StyleSheet.create({
     },
 
     lista: {
-      backgroundColor: "orange",
-      //height: 80,
-      margin: 5,
+      backgroundColor: "#00ffff",   
       justifyContent: "center",
-      alignItems: "center",
-      borderRadius: 20,
+      paddingLeft: '10%',
+      alignItems: "right",
+      marginBottom: '1%',
+      marginTop: '1%',     
     },
 
     textoLista: {
-      color: "white",
+      color: "black",
       fontWeight: "bold",
       fontSize: 18,
-    },
-
-    texto2Lista: {
-      color: "gray",
-      fontWeight: "bold",
-      fontSize: 15,
-    }
+    }, 
   
   });
 

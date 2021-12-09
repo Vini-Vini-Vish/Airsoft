@@ -133,14 +133,8 @@ app.post('/InserirLocal',async(req,res) => {
 
 //----------------------------FlatList Armu-----------------------------------------------
 
-/* app.post('/ListaItens',async(req,res) => {
-    let response = await iten.findAll(); 
-    console.log(response);
-    res.send(response);    
-}); */
-
 app.post('/ListaItens',async(req,res) => {
-    let response = await iten.findAll({attributes: ['id', 'nomeIt', 'desIt', 'anoComIt', 'desAquiIt', 'desNacIt', 'condIt', 'precoIt' ]}); 
+    let response = await iten.findAll({attributes: ['id', 'nomeIt', 'desIt', 'anoComIt', 'desAquiIt', 'desNacIt', 'condIt', 'precoIt', 'cadUserId' ]}); 
     console.log(response);
     res.send(response);    
 });
