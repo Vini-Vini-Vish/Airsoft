@@ -202,7 +202,7 @@ const styles = StyleSheet.create({
 
     lista: {
       backgroundColor: "orange",
-      height: 80,
+      //height: 80,
       margin: 5,
       justifyContent: "center",
       alignItems: "center",
@@ -212,13 +212,13 @@ const styles = StyleSheet.create({
     textoLista: {
       color: "white",
       fontWeight: "bold",
-      fontSize: 24,
+      fontSize: 18,
     },
 
     texto2Lista: {
       color: "gray",
       fontWeight: "bold",
-      fontSize: 18,
+      fontSize: 15,
     }
   
   });

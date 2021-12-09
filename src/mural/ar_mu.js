@@ -4,12 +4,13 @@ import styles from '../../style';
 
 export default function Mural_ARMU({navigation}) {
   
-  const [listaUsuarios, setListaUsuarios] = useState([]);
+  const [listaItens, setlistaItens] = useState([]);
 
   async function Listar() {
-    console.log("Lista de Usuarios");
+
+    console.log(setlistaItens);  
     try {
-      let response = await fetch('http://192.168.0.106:3000/ListaUsuario', {
+      let response = await fetch('http://192.168.0.106:3000/ListaItens', {
         method: 'POST',
         headers: {
           Accept: 'application/json',
@@ -18,7 +19,7 @@ export default function Mural_ARMU({navigation}) {
       });
       let json = await response.json();
       console.log(json);
-      setListaUsuarios(json);
+      setlistaItens(json);
     } catch (error) {console.log("Erro");}
   }
   
@@ -30,12 +31,13 @@ export default function Mural_ARMU({navigation}) {
           </View>
 
           <FlatList
-            data = {listaUsuarios}
+            data = {listaItens}
             keyExtractor = {(item) => item.id.toString()}
             renderItem = {({item}) =>
               <View style = {styles.lista}>
-                <Text style = {styles.textoLista}>{item.emailUser}</Text>
-                <Text style = {styles.texto2Lista}>{item.nomeUser}</Text>
+                <Text style = {styles.textoLista}>{item.nomeIt}</Text>
+                <Text style = {styles.textoLista}>{item.desIt}</Text>
+                <Text style = {styles.textoLista}>{item.precoIt}</Text>
               </View>
           }
           ></FlatList>

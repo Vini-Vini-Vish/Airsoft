@@ -133,8 +133,14 @@ app.post('/InserirLocal',async(req,res) => {
 
 //----------------------------FlatList Armu-----------------------------------------------
 
-app.post('/ListaUsuario',async(req,res) => {
+/* app.post('/ListaItens',async(req,res) => {
     let response = await iten.findAll(); 
+    console.log(response);
+    res.send(response);    
+}); */
+
+app.post('/ListaItens',async(req,res) => {
+    let response = await iten.findAll({attributes: ['id', 'nomeIt', 'desIt', 'anoComIt', 'desAquiIt', 'desNacIt', 'condIt', 'precoIt' ]}); 
     console.log(response);
     res.send(response);    
 });
@@ -161,9 +167,15 @@ app.get('/inserir',async(req,res)=>{
 
 // Chamadas de Consulta
 
-//geral
+//geral usuario
 app.get('/consulta',async(req,res)=>{
     let consulta = await usuario.findAll();
+    res.send(consulta);
+});
+
+//geral iten
+app.get('/consultaI',async(req,res)=>{
+    let consulta = await protecao.findAll();
     res.send(consulta);
 });
 
