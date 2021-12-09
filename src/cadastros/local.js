@@ -1,8 +1,53 @@
-import React from 'react';
-import { Text, View, Button, TextInput, } from 'react-native';
+import React, { useState } from 'react';
+import { Text, View, TouchableOpacity, TextInput, } from 'react-native';
 import styles from '../../style';
 
-export default function LocalCad ({navigation }) {
+export default function LocalCad ({navigation, route }) {
+
+    //dados usuario
+    const {idUser} = route.params;
+
+    //dados Item
+    const [nome, setNome] = useState(null);
+    const [descricao, setDesc] = useState(null);
+    const [cid, setCidade] = useState(null);
+    const [end, setEndereco] = useState(null);
+    const [tell, setTelefone] = useState(null);
+    const [valorD, setValorDiaria] = useState(null);   
+
+    async function Cadastrar() {
+        if(nome == null || descricao == null || cid == null || end == null || tell == null || valorD == null){
+            //erro
+        }
+        else{
+            console.log("Aki");
+            let inserir = await fetch('http://192.168.0.106:3000/InserirLocal',{
+                method: 'POST',
+                headers: {
+                    Accept: 'application/json',
+                        'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    nomeLoc: nome,
+                    desLoc: descricao,
+                    cidLoc: cid,
+                    endLoc: end,
+                    numTelLoc: tell,
+                    valAluLoc: valorD,                   
+                    cadUserId: idUser
+                })
+            })
+            let json = await inserir.json();
+            console.log(json);
+            setNome(null);
+            setDesc(null);
+            setCidade(null);
+            setEndereco(null);
+            setTelefone(null);
+            setValorDiaria(null);            
+        }
+    }    
+
     return (
        <View style = {styles.boxFora}> 
 
@@ -17,51 +62,58 @@ export default function LocalCad ({navigation }) {
                         <TextInput 
                             style = {styles.textInput}
                             placeholder = 'Eder Lopes de Souza'
-                            //value={text} tem que criar a variavel
+                            onChangeText = {setNome}
+                            value = {nome} 
                         ></TextInput> 
 
                         <Text style = {styles.textCad}>Descrição do Local</Text>
                         <TextInput 
                             style = {styles.textInput}
                             placeholder = 'Limpo, Plano, sem mato, metragem quadrada....'
-                            //value={text} tem que criar a variavel
+                            onChangeText = {setDesc}
+                            value = {descricao} 
                         ></TextInput> 
 
                         <Text style = {styles.textCad}>Cidade</Text>
                         <TextInput 
                             style = {styles.textInput}
                             placeholder = 'Birigui'
-                            //value={text} tem que criar a variavel
+                            onChangeText = {setCidade}
+                            value = {cid} 
                         ></TextInput> 
 
                         <Text style = {styles.textCad}>Endereço</Text>
                         <TextInput 
                             style = {styles.textInput}
                             placeholder = 'Rua Jose Alencar da Silva, 47'
-                            //value={text} tem que criar a variavel
+                            onChangeText = {setEndereco}
+                            value = {end} 
                         ></TextInput> 
 
                         <Text style = {styles.textCad}>Numero de Telefone</Text>
                         <TextInput 
                             style = {styles.textInput}
                             placeholder = '(17) 987541412'
-                            //value={text} tem que criar a variavel
+                            onChangeText = {setTelefone}
+                            value = {tell} 
                         ></TextInput> 
 
                         <Text style = {styles.textCad}>Valor da Diaria</Text>
                         <TextInput 
                             style = {styles.textInput}
                             placeholder = '500 reais a diaria'
-                            //value={text} tem que criar a variavel
+                            onChangeText = {setValorDiaria}
+                            value = {valorD} 
                         ></TextInput> 
 
                     </View>
                                 
-                    <View style = {styles.textButaoCad}>
-                        <Button                         
-                            title = 'Salvar Dados Inseridos'
-                            onPress = {() => navigation.navigate('Pagina')}
-                        ></Button>  
+                    <View >                        
+                        <TouchableOpacity                            
+                            onPress = {() => { Cadastrar(); }}                           
+                        >
+                            <Text style = {styles.textButaoCad} >Cadastrar</Text>
+                        </TouchableOpacity>                         
                     </View>                        
                 </View>     
            </View>

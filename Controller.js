@@ -113,6 +113,24 @@ app.post('/InserirItem',async(req,res) => {
     res.send(insere);
 })
 
+//------------------------------------Itens de Proteção----------------------------------------------------
+
+app.post('/InserirLocal',async(req,res) => {
+    let insere = await loc.create({
+        nomeLoc: req.body.nomeLoc,
+        desLoc: req.body.desLoc,
+        cidLoc: req.body.cidLoc,
+        endLoc: req.body.endLoc,
+        numTelLoc: req.body.numTelLoc,
+        valAluLoc: req.body.valAluLoc,        
+        cadUserId: req.body.cadUserId,
+        createAt: new Date(),
+        updateAT: new Date()
+    });
+    console.log(insere);
+    res.send(insere);
+})
+
 //----------------------------------------------------------------------------------------
 
 //Chamada para Inserir dados

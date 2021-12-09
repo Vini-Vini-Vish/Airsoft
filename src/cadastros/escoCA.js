@@ -39,7 +39,7 @@ export default function EscolhasCA ({navigation , route}) {
                     <View style = {styles.textButaoComun}> 
                       <Button 
                           title = 'Cadastro de Locais'
-                          onPress = {() => navigation.navigate('CadastrarLo')}
+                          onPress = {() => navigation.navigate('CadastrarLo', {idUser})}
                       ></Button>  
                     </View>               
                   </View>
