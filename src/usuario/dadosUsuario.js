@@ -2,7 +2,10 @@ import React from 'react';
 import { Text, View, Button } from 'react-native';
 import styles from '../../style';
 
-export default function EscolhasUsuario ({navigation }) {
+export default function EscolhasUsuario ({navigation, route }) {
+
+  const {idUser} = route.params;
+
     return (
         <View style = {styles.boxFora}>       
 
@@ -24,7 +27,7 @@ export default function EscolhasUsuario ({navigation }) {
                     <View style = {styles.textButaoComun}> 
                       <Button 
                         title = 'Lista de Armas Cadastradas'
-                        onPress = {() => navigation.navigate('Lista de Armas Cadastradas')}
+                        onPress = {() => navigation.navigate('Lista de Armas Cadastradas', {idUser})}
                       ></Button>
                     </View>
                   </View>
@@ -33,7 +36,7 @@ export default function EscolhasUsuario ({navigation }) {
                     <View style = {styles.textButaoComun}> 
                       <Button 
                         title = 'Lista de itens de Proteção Cadastrados'
-                        onPress = {() => navigation.navigate('Lista de Itens de Proteção Cadastrados')}
+                        onPress = {() => navigation.navigate('Lista de Itens de Proteção Cadastrados', {idUser})}
                       ></Button>
                     </View>
                   </View>
@@ -42,7 +45,7 @@ export default function EscolhasUsuario ({navigation }) {
                     <View style = {styles.textButaoComun}> 
                       <Button 
                           title = 'Lista de Locais Cadastrados'
-                          onPress = {() => navigation.navigate('Lista de Locais Cadastrados')}
+                          onPress = {() => navigation.navigate('Lista de Locais Cadastrados', {idUser})}
                       ></Button> 
                     </View>
                   </View> 

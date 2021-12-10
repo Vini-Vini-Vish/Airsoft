@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const models = require('./models');
-const { Json } = require('sequelize/dist/lib/utils');
+//const { Json } = require('sequelize/dist/lib/utils');
 
 const app = express();
 app.use(cors());
@@ -155,7 +155,34 @@ app.post('/ListaLocalPronto',async(req,res) => {
     res.send(response);    
 });
 
+//----------------------------FlatList Armu Cadastrados User--------------------------------------
+
+/* app.post('/ListaIArmuCad',async(req,res) => {
+    let response = await iten.findAll({
+        attributes: ['id', 'nomeIt', 'desIt', 'anoComIt', 'desAquiIt', 'desNacIt', 'condIt', 'precoIt', 'cadUserId' 
+        ]}
+    ); 
+    console.log(response);
+    res.send(response);    
+}); */
+
 //----------------------------------------------------------------------------------------
+
+//Chamada Alteração
+
+app.get('/alterar',async(req,res)=>{
+    let alterar = await usuario.update({
+        emailUser: "teste_teste@gmail.com",
+        nomeUser: "Usuario Teste",
+        cpfUser: "123456789",
+        numTelUser: "1898157465",
+        senhaUser: "789456123",
+        confSenhaUser: "789456123"
+    }, 
+        { where: { id: 1 }
+    });
+    res.send(alterar);
+});
 
 //Chamada para Inserir dados
 
@@ -202,21 +229,7 @@ app.get('/consultaSe',async(req,res)=>{
 
 //Fim Consulta
 
-//Chamada Alteração
 
-app.get('/alterar',async(req,res)=>{
-    let alterar = await usuario.update({
-        emailUser: "teste_teste@gmail.com",
-        nomeUser: "Usuario Teste",
-        cpfUser: "123456789",
-        numTelUser: "1898157465",
-        senhaUser: "789456123",
-        confSenhaUser: "789456123"
-    }, 
-        { where: { id: 1 }
-    });
-    res.send(alterar);
-});
 
 //Fim Alteração
 

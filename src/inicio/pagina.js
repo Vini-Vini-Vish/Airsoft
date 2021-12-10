@@ -41,9 +41,8 @@ export default function PaginaPrincipal ({navigation, route }) {
             <View style = {styles.boxTextComun}>              
               <View style = {styles.textButaoComun}> 
                 <Button 
-                  title = 'Dados do Usuario'
-                  //onPress = {() => navigation.navigate('alterarUser', {email:email})}
-                  onPress = {() => navigation.navigate('Dados de Usuario')}
+                  title = 'Dados do Usuario'                  
+                  onPress = {() => navigation.navigate('Dados de Usuario', {idUser})}
                 ></Button>
               </View>
             </View>
