@@ -18,7 +18,7 @@ export default function EscolhasUsuario ({navigation, route }) {
                     <View style = {styles.textButaoComun}> 
                       <Button  
                         title = 'Perfil'
-                        onPress = {() => navigation.navigate('alterarUser')}
+                        onPress = {() => navigation.navigate('Pefil do Usuario')}
                       ></Button>
                     </View>
                   </View>

@@ -15,7 +15,7 @@ export default function EscolhasMU ({navigation }) {
                     <View style = {styles.textButaoComun}> 
                       <Button  
                         title = 'Armas e Munição'
-                        onPress = {() => navigation.navigate('ARMU')}
+                        onPress = {() => navigation.navigate('Mural de Armas')}
                       ></Button>
                     </View>
                   </View>
@@ -24,7 +24,7 @@ export default function EscolhasMU ({navigation }) {
                     <View style = {styles.textButaoComun}> 
                       <Button 
                         title = 'Itens de Proteção'
-                        onPress = {() => navigation.navigate('PROT')}
+                        onPress = {() => navigation.navigate('Mural de Itens de Proteção')}
                       ></Button>
                     </View>
                   </View>
@@ -42,7 +42,7 @@ export default function EscolhasMU ({navigation }) {
                     <View style = {styles.textButaoComun}> 
                       <Button 
                           title = 'Locar Campo Pronto'
-                          onPress = {() => navigation.navigate('LocalPR')}
+                          onPress = {() => navigation.navigate('Mural de Locações')}
                       ></Button> 
                     </View>
                   </View> 

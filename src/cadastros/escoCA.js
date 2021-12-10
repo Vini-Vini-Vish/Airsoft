@@ -19,7 +19,7 @@ export default function EscolhasCA ({navigation , route}) {
                     <View style = {styles.textButaoComun}> 
                       <Button  
                           title = 'Cadastro de Armas e Munição'
-                          onPress = {() => navigation.navigate('CadastrarIT', {idUser})}
+                          onPress = {() => navigation.navigate('Cadastro de Armas e Itens', {idUser})}
                       ></Button>
                     </View>
                   </View>
@@ -29,7 +29,7 @@ export default function EscolhasCA ({navigation , route}) {
                     <View style = {styles.textButaoComun}> 
                       <Button  
                           title = 'Cadastro de Itens de Proteção'
-                          onPress = {() => navigation.navigate('CadastrarPR', {idUser})}
+                          onPress = {() => navigation.navigate('Cadastro de Itens de Proteção', {idUser})}
                       ></Button>
                     </View>
                   </View>
@@ -39,7 +39,7 @@ export default function EscolhasCA ({navigation , route}) {
                     <View style = {styles.textButaoComun}> 
                       <Button 
                           title = 'Cadastro de Locais'
-                          onPress = {() => navigation.navigate('CadastrarLo', {idUser})}
+                          onPress = {() => navigation.navigate('Cadastro de locais', {idUser})}
                       ></Button>  
                     </View>               
                   </View>

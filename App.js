@@ -27,26 +27,25 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
         
-        <Stack.Screen name = "Logar" component = {LoginUser} />
-        <Stack.Screen name = "Pagina" component = {PaginaPrincipal} />
+        <Stack.Screen name = "Login" component = {LoginUser} />
+        <Stack.Screen name = "Menu Central" component = {PaginaPrincipal} />
 
-        <Stack.Screen name = "EscolherMU" component = {EscolhasMU} />
-        <Stack.Screen name = "ARMU" component = {Mural_ARMU} />
-        <Stack.Screen name = "PROT" component = {Mural_ITENS} />
-        <Stack.Screen name = "LocalPR" component = {Mural_LOPR} />
+        <Stack.Screen name = "Mural de Publicações" component = {EscolhasMU} />
+        <Stack.Screen name = "Mural de Armas" component = {Mural_ARMU} />
+        <Stack.Screen name = "Mural de Itens de Proteção" component = {Mural_ITENS} />
+        <Stack.Screen name = "Mural de Locações" component = {Mural_LOPR} />
 
-        <Stack.Screen name = "EscolherCA" component = {EscolhasCA} />
-        <Stack.Screen name = "CadastrarIT" component = {ItensCad} />
-        <Stack.Screen name = "CadastrarPR" component = {ProteCad} />
-        <Stack.Screen name = "CadastrarLo" component = {LocalCad} />
-        <Stack.Screen name = "CadastrarUser" component = {userCad} />        
+        <Stack.Screen name = "Lista de Cadastros" component = {EscolhasCA} />
+        <Stack.Screen name = "Cadastro de Armas e Itens" component = {ItensCad} />
+        <Stack.Screen name = "Cadastro de Itens de Proteção" component = {ProteCad} />
+        <Stack.Screen name = "Cadastro de locais" component = {LocalCad} />
+        <Stack.Screen name = "Cadastrar Novo Usuario" component = {userCad} />        
 
         <Stack.Screen name = "Dados de Usuario" component = {EscolhasUsuario} /> 
-        <Stack.Screen name = "alterarUser" component = {perfilAlt} /> 
+        <Stack.Screen name = "Pefil do Usuario" component = {perfilAlt} /> 
         <Stack.Screen name = "Lista de Armas Cadastradas" component = {ListItem} /> 
         <Stack.Screen name = "Lista de Itens de Proteção Cadastrados" component = {ListProt} /> 
-        <Stack.Screen name = "Lista de Locais Cadastrados" component = {ListLocal} /> 
-       
+        <Stack.Screen name = "Lista de Locais Cadastrados" component = {ListLocal} />        
 
       </Stack.Navigator>
     </NavigationContainer>

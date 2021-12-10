@@ -24,7 +24,7 @@ export default function PaginaPrincipal ({navigation, route }) {
               <View style = {styles.textButaoComun}>               
                 <Button  
                   title = 'Cadastros'
-                  onPress = {() => navigation.navigate('EscolherCA', {idUser})}
+                  onPress = {() => navigation.navigate('Lista de Cadastros', {idUser})}
                 ></Button>
               </View>
             </View>            
@@ -33,7 +33,7 @@ export default function PaginaPrincipal ({navigation, route }) {
               <View style = {styles.textButaoComun}> 
                 <Button 
                   title = 'Mural de Publicações'
-                  onPress = {() => navigation.navigate('EscolherMU')}
+                  onPress = {() => navigation.navigate('Mural de Publicações')}
                 ></Button>
               </View>
             </View>

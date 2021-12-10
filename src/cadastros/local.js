@@ -58,7 +58,7 @@ export default function LocalCad ({navigation, route }) {
                         <Text style = {styles.textCad}>Nome do Responsavel</Text>
                         <TextInput 
                             style = {styles.textInput}
-                            placeholder = 'Eder Lopes de Souza'
+                            placeholder = 'Guilherme Cerqueira'
                             onChangeText = {setNome}
                             value = {nome} 
                         ></TextInput> 
@@ -66,7 +66,7 @@ export default function LocalCad ({navigation, route }) {
                         <Text style = {styles.textCad}>Descrição do Local</Text>
                         <TextInput 
                             style = {styles.textInput}
-                            placeholder = 'Limpo, Plano, sem mato, metragem quadrada....'
+                            placeholder = 'Limpo, plano, sem mato, metragem quadrada....'
                             onChangeText = {setDesc}
                             value = {descricao} 
                         ></TextInput> 

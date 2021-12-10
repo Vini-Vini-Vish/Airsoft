@@ -38,7 +38,7 @@ export default function LoginUser ({navigation }) {
 
           if(senhaLogin == senha){        
             //navigation.navigate('Pagina', {email:emaiLogin});
-            navigation.navigate('Pagina', {idUser});
+            navigation.navigate('Menu Central', {idUser});
           }
           else{
             setMensagem("A senha digitada errada")
@@ -85,7 +85,7 @@ export default function LoginUser ({navigation }) {
                 <View style = {styles.textButao}>
                   <Button                         
                   title = 'Cadastro de Usuario'                  
-                  onPress = {() => navigation.navigate('CadastrarUser')}
+                  onPress = {() => navigation.navigate('Cadastrar Novo Usuario')}
                   ></Button>  
                 </View>    
               </View>                                                   

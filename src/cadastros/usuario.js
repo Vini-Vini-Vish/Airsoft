@@ -40,7 +40,7 @@ export default function userCad ({navigation }) {
 
                 let json = await response.json();
                 
-                navigation.navigate('Logar');
+                navigation.navigate('Login');
             }
             else{
                 //apresentar mensagem de senha desiguais
