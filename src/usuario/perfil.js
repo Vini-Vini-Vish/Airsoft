@@ -4,19 +4,15 @@ import styles from '../../style';
 
 export default function perfilAlt ({navigation, route }) {
 
-    const {email} = route.params;
+    const {idUser} = route.params;
 
-    const [user, setUser] = useState(null);    
+    //const [user, setUser] = useState(null);    
     const [emailUser, setemailUser] = useState(null);    
     const [nome, setNome] = useState(null);
     const [cpf, setCPF] = useState(null);
     const [tell, setTell] = useState(null);
     const [senha, setSenha] = useState(null);
     const [confSenha, setConfSenha] = useState(null);     
-
-    async function PegarDado() {
-        setemailUser(email);
-    };
   
     async function ConsultarDados(){
         let response = await fetch('http://192.168.0.106:3000/ConsultarUsuario',{
@@ -26,12 +22,11 @@ export default function perfilAlt ({navigation, route }) {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({                
-                emailUser: emailUser                                
+                id: idUser                                
             })            
         });
-        let json = await response.json();
-        console.log(response);
-        setUser(json.id);
+        let json = await response.json();      
+        setemailUser(json.emailUser)
         setNome(json.nomeUser);
         setCPF(json.cpfUser);
         setTell(json.numTelUser); 
@@ -49,7 +44,13 @@ export default function perfilAlt ({navigation, route }) {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({                
-                id: user                
+                id: idUser,
+                emailUser: emailUser,
+                nomeUser: nome,
+                cpfUser: cpf,
+                numTelUser: tell,
+                senhaUser: senha,
+                confSenhaUser: confSenha, 
             })            
         });
         let json = await alterar.json();   
@@ -64,16 +65,11 @@ export default function perfilAlt ({navigation, route }) {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({                
-                emailUser: emailUser                                
-            })            
-        });
-        setUser(null);
-        setemailUser(null);
-        setNome(null);
-        setCPF(null);
-        setTell(null); 
-        setSenha(null);
-        setConfSenha(null);
+                id: idUser                                    
+            })                        
+        });      
+        let json = await alterar.json();   
+       
     }
 
     return (     
@@ -140,21 +136,19 @@ export default function perfilAlt ({navigation, route }) {
                     <View style = {styles.textButaoCad}>
                         <Button                         
                             title = 'Buscar Dados Salvos'
-                            onPress = {() => {PegarDado(); ConsultarDados();}}
+                            onPress = {() => {ConsultarDados();}}
                         ></Button>  
                     </View>  
                     <View style = {styles.textButaoCad}>
                         <Button                         
                             title = 'Editar Dados'
-                            onPress = {() => {AlterarDados();}}
-                            //onPress = {() => navigation.navigate('Pagina')}
+                            onPress = {() => {AlterarDados();}}                           
                         ></Button>  
                     </View> 
                     <View style = {styles.textButaoCad}>
                         <Button                         
                             title = 'Excluir Dados'
-                            onPress = {() => {DeletarDados();}}
-                            //onPress = {() => navigation.navigate('Pagina')}
+                            onPress = {() => {DeletarDados();  navigation.navigate('Login');}}                          
                         ></Button>  
                     </View>                       
                 </View>     

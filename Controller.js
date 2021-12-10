@@ -47,7 +47,8 @@ app.post('/ValidarUsuario',async(req,res) => {
 
 //Pega os dados para o perfil
 app.post('/ConsultarUsuario',async(req,res) =>{
-    let response = await usuario.findOne({where:{emailUser:req.body.emailUser}});
+    let response = await usuario.findOne({where: {id:req.body.id}});
+    console.log(response);
     res.send(response);
 })
 
