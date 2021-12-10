@@ -12,9 +12,9 @@ export default function PaginaPrincipal ({navigation, route }) {
       <View style = {styles.container}>
           
           <View style = {styles.boxTitle}>
-
+          
+            <Text style = {styles.textTitle}>App para compra ou aluguel de artigos para jogos.</Text>
             <Text style = {styles.textTitle}>Podendo alugar campos para realizar jogos fechados.</Text>
-            <Text style = {styles.textTitle}>App para compra ou aluguel de intens para jogos.</Text>
 
           </View>         
 

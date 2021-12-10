@@ -35,7 +35,7 @@ export default function Mural_ARMU({navigation}) {
             keyExtractor = {(item) => item.id.toString()}
             renderItem = {({item}) =>
               <View style = {styles.lista}>
-                <Text style = {styles.textoLista}>Nome do Item: {item.nomeIt}]</Text>
+                <Text style = {styles.textoLista}>Nome do Item: {item.nomeIt}</Text>
                 <Text style = {styles.textoLista}>Descrição: {item.desIt}</Text>
                 <Text style = {styles.textoLista}>Valor: {item.precoIt}</Text>               
               </View>
